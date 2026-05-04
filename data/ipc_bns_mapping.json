@@ -1,0 +1,63 @@
+[
+  {
+    "id": "1",
+
+    "ipc_code": "IPC-302",
+    "ipc_title": "Murder",
+
+    "bns_code": "BNS-101",
+    "bns_title": "Homicide",
+
+    "description": "Punishment for murder and unlawful killing offenses.",
+
+    "chapter": "Offences Against Human Body",
+
+    "keywords": [
+      "murder",
+      "homicide",
+      "killing"
+    ],
+
+    "ai_summary": "This section explains offenses related to unlawful killing and corresponding punishments.",
+
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+
+    "created_at": "2026-05-02T10:00:00Z",
+
+    "updated_at": "2026-05-02T10:00:00Z"
+  },
+
+  {
+    "id": "2",
+
+    "ipc_code": "IPC-375",
+    "ipc_title": "Rape",
+
+    "bns_code": "BNS-63",
+    "bns_title": "Sexual Assault Offenses",
+
+    "description": "Definition and punishment related to sexual assault crimes.",
+
+    "chapter": "Offences Against Women",
+
+    "keywords": [
+      "rape",
+      "sexual assault",
+      "crime against women"
+    ],
+
+    "ai_summary": "This section defines sexual assault offenses and related punishments under revised legal structure.",
+
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+
+    "created_at": "2026-05-02T10:00:00Z",
+
+    "updated_at": "2026-05-02T10:00:00Z"
+  }
+]
