@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SearchResponse",
+  "description": "Contract for GET /search API response",
+  "type": "object",
+  "required": ["query", "count", "results"],
+  "additionalProperties": false,
+  "properties": {
+    "query": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The sanitised search query that was executed"
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of results returned"
+    },
+    "results": {
+      "type": "array",
+      "description": "Ranked list of matching mapping records",
+      "items": {
+        "type": "object",
+        "required": ["id", "score", "record"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "score": { "type": "number", "minimum": 0 },
+          "record": {
+            "type": "object",
+            "required": [
+              "id", "ipc_code", "ipc_title",
+              "bns_code", "bns_title",
+              "description", "chapter",
+              "keywords", "ai_summary", "validation_rules"
+            ],
+            "properties": {
+              "id":               { "type": "string" },
+              "ipc_code":         { "type": "string" },
+              "ipc_title":        { "type": "string" },
+              "bns_code":         { "type": "string" },
+              "bns_title":        { "type": "string" },
+              "description":      { "type": "string" },
+              "chapter":          { "type": "string" },
+              "keywords":         { "type": "array", "items": { "type": "string" } },
+              "ai_summary":       { "type": "string" },
+              "validation_rules": { "type": "array", "items": { "type": "string" } },
+              "created_at":       { "type": "string" },
+              "updated_at":       { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
