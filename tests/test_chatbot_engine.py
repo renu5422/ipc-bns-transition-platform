@@ -56,6 +56,12 @@ class TestAsk:
     def test_exact_code_query_is_high_confidence(self, engine):
         assert engine.ask("IPC-302")["confidence"] == "high"
 
+    def test_natural_language_with_code_is_high_confidence(self, engine):
+        """Regression: codes embedded in sentences must still match exactly."""
+        result = engine.ask("what replaced IPC-302?")
+        assert result["confidence"] == "high"
+        assert "BNS-101" in result["answer"]
+
     def test_unknown_topic_refuses_gracefully(self, engine):
         result = engine.ask("helicopter licensing rules")
         assert result["confidence"] == "none"

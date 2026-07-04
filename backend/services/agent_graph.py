@@ -11,19 +11,18 @@ every answer is reviewable step by step. The LLM is only used in the final
 compose step; extraction, retrieval, and validation are deterministic.
 """
 
-import re
 from typing import Any, TypedDict
 
 from langchain_core.output_parsers import StrOutputParser
 from langgraph.graph import END, START, StateGraph
 
-from backend.services.chatbot_engine import _confidence, resolve_default_llm
+from backend.services.chatbot_engine import (
+    _confidence,
+    extract_references,
+    resolve_default_llm,
+)
 from backend.services.mapping_service import MappingService
 from backend.services.prompts import CHAT_PROMPT, format_context
-
-# Matches IPC-302, IPC 302, ipc302, BNS-101, bns_101 ...
-_CODE_RE = re.compile(r"\b(IPC|BNS)[\s\-_]?(\d{1,4})\b", re.IGNORECASE)
-
 
 class AgentState(TypedDict, total=False):
     question: str
@@ -33,16 +32,6 @@ class AgentState(TypedDict, total=False):
     confidence: str                # high | medium | low | none
     answer: str
     trace: list[str]               # audit trail, one entry per step
-
-
-def extract_references(text: str) -> list[str]:
-    """Detect and normalise IPC/BNS references (README step 2)."""
-    seen: list[str] = []
-    for prefix, num in _CODE_RE.findall(text or ""):
-        code = f"{prefix.upper()}-{num}"
-        if code not in seen:
-            seen.append(code)
-    return seen
 
 
 class LegalTransitionAgent:

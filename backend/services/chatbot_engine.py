@@ -34,6 +34,19 @@ from backend.services.prompts import (
 _PAIR_RE = re.compile(r"^\[([A-Za-z0-9\-]+) -> ([A-Za-z0-9\-]+)\] (.+)$", re.MULTILINE)
 _NO_CONTEXT = "(no matching mapping records found)"
 
+# Matches IPC-302, IPC 302, ipc302, BNS-101, bns_101 ...
+_CODE_RE = re.compile(r"\b(IPC|BNS)[\s\-_]?(\d{1,4})\b", re.IGNORECASE)
+
+
+def extract_references(text: str) -> list[str]:
+    """Detect and normalise IPC/BNS section references in free text."""
+    seen: list[str] = []
+    for prefix, num in _CODE_RE.findall(text or ""):
+        code = f"{prefix.upper()}-{num}"
+        if code not in seen:
+            seen.append(code)
+    return seen
+
 
 def _extract_context(prompt: str) -> str:
     start = prompt.find(CONTEXT_BEGIN)
@@ -151,7 +164,16 @@ class ChatbotEngine:
         if not question:
             raise ValueError("question must not be empty")
 
-        hits = self._svc.search(question, limit=self._top_k)
+        # Retrieve by extracted section codes first, then the raw question,
+        # so natural-language queries containing codes still match exactly.
+        queries = extract_references(question) + [question]
+        hits: list[dict[str, Any]] = []
+        for query in queries:
+            for hit in self._svc.search(query, limit=self._top_k):
+                if all(h["id"] != hit["id"] for h in hits):
+                    hits.append(hit)
+        hits.sort(key=lambda h: -h["score"])
+        hits = hits[: self._top_k]
         records = [h["record"] for h in hits]
         answer = self._chat_chain.invoke(
             {"context": format_context(records), "question": question}
