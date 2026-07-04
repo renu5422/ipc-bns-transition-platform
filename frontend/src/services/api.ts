@@ -1,3 +1,4 @@
+// TARGET PATH IN REPO: frontend/src/services/api.ts  (replaces existing file)
 import axios from 'axios';
 import { SectionMapping } from '@/types/section';
 
@@ -6,7 +7,7 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: { 'Content-Type': 'application/json' },
-  timeout: 10000,
+  timeout: 15000,
 });
 
 // ── Response types ───────────────────────────────────────────────────────
@@ -65,6 +66,40 @@ export interface HealthResponse {
   mapping_count: number;
 }
 
+export interface ChatSource {
+  id: string;
+  ipc_code: string;
+  bns_code: string;
+  score: number;
+}
+
+export type Confidence = 'high' | 'medium' | 'low' | 'none';
+
+export interface ChatResponse {
+  answer: string;
+  sources: ChatSource[];
+  confidence: Confidence;
+  model: string;
+}
+
+export interface AgentResponse {
+  answer: string;
+  references: string[];
+  sources: ChatSource[];
+  contradictions: Array<Record<string, unknown>>;
+  confidence: Confidence;
+  trace: string[];
+  model: string;
+}
+
+export interface SummaryResponse {
+  code: string;
+  ipc_code: string;
+  bns_code: string;
+  summary: string;
+  model: string;
+}
+
 // ── API functions ────────────────────────────────────────────────────────
 
 export async function searchSections(
@@ -101,5 +136,20 @@ export async function getHealth(): Promise<HealthResponse> {
 
 export async function getAdminDiagnostics() {
   const { data } = await apiClient.get('/admin/diagnostics');
+  return data;
+}
+
+export async function askChat(question: string): Promise<ChatResponse> {
+  const { data } = await apiClient.post<ChatResponse>('/chat', { question });
+  return data;
+}
+
+export async function askAgent(question: string): Promise<AgentResponse> {
+  const { data } = await apiClient.post<AgentResponse>('/agent', { question });
+  return data;
+}
+
+export async function getSummary(code: string): Promise<SummaryResponse> {
+  const { data } = await apiClient.post<SummaryResponse>('/chat/summary', { code });
   return data;
 }

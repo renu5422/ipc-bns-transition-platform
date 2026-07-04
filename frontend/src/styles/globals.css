@@ -1,1 +1,44 @@
-/* Global styles */
+/* TARGET PATH IN REPO: frontend/src/styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design tokens ─────────────────────────────────────────────────────── */
+:root {
+  --color-surface: 248 250 252;    /* slate-50  */
+  --color-ink: 30 41 59;           /* slate-800 */
+  --color-accent: 245 158 11;      /* amber-500 */
+}
+
+@layer base {
+  html {
+    @apply antialiased scroll-smooth;
+  }
+  body {
+    @apply bg-slate-50 text-slate-800;
+  }
+  ::selection {
+    @apply bg-amber-200 text-slate-900;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-slate-200 rounded-xl shadow-sm;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .code-chip {
+    @apply px-2.5 py-1 text-xs font-mono font-bold rounded-md;
+  }
+}
+
+/* Thin, unobtrusive scrollbars for chat panes */
+.scroll-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: rgb(203 213 225);
+  border-radius: 3px;
+}

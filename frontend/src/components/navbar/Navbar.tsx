@@ -1,3 +1,4 @@
+// TARGET PATH IN REPO: frontend/src/components/navbar/Navbar.tsx  (replaces existing file)
 'use client';
 
 import Link from 'next/link';
@@ -6,6 +7,7 @@ import clsx from 'clsx';
 
 const NAV_LINKS = [
   { href: '/search', label: 'Search' },
+  { href: '/chat', label: 'AI Assistant' },
   { href: '/dashboard', label: 'Dashboard' },
 ];
 
@@ -13,19 +15,17 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-slate-900 text-white shadow-md">
+    <nav className="bg-slate-900 text-white shadow-md sticky top-0 z-40">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <span className="text-amber-400 font-bold text-lg tracking-tight">
-            ⚖️ IPC-BNS
+            ⚖️ NyayaSetu
           </span>
           <span className="hidden sm:inline text-slate-300 text-sm font-medium">
-            Transition Platform
+            IPC ↔ BNS Platform
           </span>
         </Link>
 
-        {/* Nav links */}
         <div className="flex items-center gap-1">
           {NAV_LINKS.map(({ href, label }) => (
             <Link
@@ -33,7 +33,7 @@ export default function Navbar() {
               href={href}
               className={clsx(
                 'px-3 py-1.5 rounded-md text-sm font-medium transition-colors',
-                pathname === href
+                pathname?.startsWith(href)
                   ? 'bg-amber-500 text-slate-900'
                   : 'text-slate-300 hover:bg-slate-700 hover:text-white'
               )}
@@ -43,7 +43,12 @@ export default function Navbar() {
           ))}
           <Link
             href="/admin"
-            className="ml-2 px-3 py-1.5 rounded-md text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
+            className={clsx(
+              'ml-2 px-3 py-1.5 rounded-md text-xs font-medium transition-colors',
+              pathname?.startsWith('/admin')
+                ? 'bg-slate-700 text-white'
+                : 'text-slate-400 hover:text-white hover:bg-slate-700'
+            )}
           >
             Admin
           </Link>
