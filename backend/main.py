@@ -10,6 +10,7 @@ from backend.api import admin, auth, search
 from backend.api.agent import router as agent_router
 from backend.api.chat import router as chat_router
 from backend.api.mapping import router as mapping_router
+from backend.api.ml import router as ml_router
 from backend.services.mapping_service import MappingService
 
 logging.basicConfig(
@@ -20,7 +21,7 @@ logger = logging.getLogger("ipc_bns")
 
 app = FastAPI(
     title="IPC-BNS Transition Platform API",
-    version="1.3.0",
+    version="1.4.0",
     description="AI-assisted legal migration platform for IPC-BNS cross-referencing.",
 )
 
@@ -59,6 +60,7 @@ app.include_router(admin.router)
 app.include_router(mapping_router)
 app.include_router(chat_router)
 app.include_router(agent_router)
+app.include_router(ml_router)
 
 
 @app.get("/health")

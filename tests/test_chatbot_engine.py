@@ -85,6 +85,27 @@ class TestSummarize:
         assert "IPC-302" in result["summary"]
         assert "BNS-101" in result["summary"]
 
+    def test_summary_handles_subsection_codes(self, tmp_path):
+        """Regression: codes with parentheses like BNS-106(1) must parse."""
+        import json
+        from backend.services.mapping_service import MappingService
+        record = {
+            "id": "sub-1", "ipc_code": "IPC-304A", "ipc_title": "Causing death by negligence",
+            "bns_code": "BNS-106(1)", "bns_title": "Causing death by negligence",
+            "description": "Causing death by a rash or negligent act.",
+            "chapter": "Offences Against Human Body",
+            "keywords": ["negligence", "rash act", "death"],
+            "ai_summary": "Negligence causing death.",
+            "validation_rules": ["keyword_match"],
+            "created_at": "2026-01-01T00:00:00Z", "updated_at": "2026-01-01T00:00:00Z",
+        }
+        f = tmp_path / "sub.json"
+        f.write_text(json.dumps([record]), encoding="utf-8")
+        eng = ChatbotEngine(mapping_service=MappingService(f))
+        result = eng.summarize("IPC-304A")
+        assert "BNS-106(1)" in result["summary"]
+        assert "cannot find" not in result["summary"].lower()
+
     def test_summary_mentions_chapter(self, engine):
         result = engine.summarize("IPC-302")
         assert "Offences Against Human Body" in result["summary"]

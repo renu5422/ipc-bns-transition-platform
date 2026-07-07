@@ -7,6 +7,13 @@ passlib[bcrypt]>=1.7.4
 python-multipart>=0.0.9
 langchain-core>=0.2.0
 langgraph>=0.1.0
+sqlalchemy>=2.0
+mcp>=1.0.0
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.4
+matplotlib>=3.8
+joblib>=1.3
 # Optional real-LLM backends (deterministic fallback is used if absent):
 # langchain-openai>=0.1.0     # + set OPENAI_API_KEY
 # langchain-anthropic>=0.1.0  # + set ANTHROPIC_API_KEY

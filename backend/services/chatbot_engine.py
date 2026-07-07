@@ -31,18 +31,18 @@ from backend.services.prompts import (
     format_context,
 )
 
-_PAIR_RE = re.compile(r"^\[([A-Za-z0-9\-]+) -> ([A-Za-z0-9\-]+)\] (.+)$", re.MULTILINE)
+_PAIR_RE = re.compile(r"^\[([A-Za-z0-9()\-]+) -> ([A-Za-z0-9()\-]+)\] (.+)$", re.MULTILINE)
 _NO_CONTEXT = "(no matching mapping records found)"
 
 # Matches IPC-302, IPC 302, ipc302, BNS-101, bns_101 ...
-_CODE_RE = re.compile(r"\b(IPC|BNS)[\s\-_]?(\d{1,4})\b", re.IGNORECASE)
+_CODE_RE = re.compile(r"\b(IPC|BNS)[\s\-_]?(\d{1,4}[A-Za-z]?)\b", re.IGNORECASE)
 
 
 def extract_references(text: str) -> list[str]:
     """Detect and normalise IPC/BNS section references in free text."""
     seen: list[str] = []
     for prefix, num in _CODE_RE.findall(text or ""):
-        code = f"{prefix.upper()}-{num}"
+        code = f"{prefix.upper()}-{num.upper()}"
         if code not in seen:
             seen.append(code)
     return seen

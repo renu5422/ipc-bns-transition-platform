@@ -78,9 +78,9 @@ The contradiction module identifies and isolates problematic outcomes such as:
 
 Detected contradictions are surfaced as structured review tasks rather than silently resolved, supporting legal quality control.
 
-## Future Chatbot Layer
+## Chatbot & Agent Layer (implemented)
 
-A future conversational interface is planned as a thin layer on top of the existing reasoning and validation engine. The chatbot will:
+The conversational layer is live, built as a thin layer on top of the reasoning and validation engine. It:
 - answer migration questions using the same validated pipeline,
 - provide citation-aware explanations from platform outputs,
 - remain bounded by deterministic and scoring constraints.
@@ -89,9 +89,33 @@ This keeps conversational UX aligned with the platform's engineering and complia
 
 ## Tech Stack
 
-- **Backend:** FastAPI, Python
-- **Frontend:** Next.js, TypeScript
-- **Data/Rules:** JSON-based mapping assets and rule metadata
+- **Backend:** FastAPI, Python 3.10+, SQLAlchemy (SQLite), Pandas
+- **AI/Agents:** LangChain (grounded chatbot), LangGraph (multi-step agent with audit trace), MCP server, prompt engineering with deterministic offline fallback
+- **ML:** Scikit-learn TF-IDF ranking model (NumPy/Pandas/Matplotlib evaluation)
+- **Frontend:** Next.js 14, TypeScript, Tailwind CSS
+- **Data/Rules:** JSON mapping assets + SQLite mirror (`backend/db`)
+- **Ops:** Docker + docker-compose, GitHub Actions CI, pytest (198 tests)
+
+## API Endpoints
+
+`GET /health` · `GET /search` · `GET /mapping` · `GET /mapping/contradiction` · `GET /mapping/impact` · `POST /chat` · `POST /chat/summary` · `POST /agent` · `POST /rank` · `GET /admin/diagnostics`
+
+## Running with Docker
+
+```
+docker compose up --build
+# backend -> http://localhost:8000  |  frontend -> http://localhost:3000
+```
+
+## MCP Server
+
+Expose the platform to MCP clients (Claude Desktop, Claude Code):
+
+```
+python -m backend.mcp_server.server
+```
+
+See `backend/mcp_server/README.md` for registration instructions.
 
 ## Repository Structure
 

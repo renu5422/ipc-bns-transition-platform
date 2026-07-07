@@ -1,18 +1,27 @@
+# IPC-BNS Transition Platform — full stack
+# Usage: docker compose up --build
 services:
   backend:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     ports:
       - "8000:8000"
     environment:
-      - JWT_SECRET=${JWT_SECRET}
-    volumes:
-      - ./data:/app/data
+      - LOG_LEVEL=INFO
+      - CORS_ORIGINS=http://localhost:3000
+      # - OPENAI_API_KEY=...      # optional real LLM
+      # - ANTHROPIC_API_KEY=...   # optional real LLM
+    restart: unless-stopped
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000
     ports:
       - "3000:3000"
-    environment:
-      - NEXT_PUBLIC_API_URL=http://backend:8000
     depends_on:
       - backend
+    restart: unless-stopped

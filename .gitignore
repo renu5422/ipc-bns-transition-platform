@@ -28,3 +28,7 @@ Thumbs.db
 
 # Screenshots (tracked separately if needed)
 screenshots/
+
+# generated artifacts
+data/ipc_bns.db
+backend/ml/artifacts/

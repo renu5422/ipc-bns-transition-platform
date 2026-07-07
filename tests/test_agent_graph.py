@@ -22,6 +22,8 @@ class TestExtractReferences:
             ("lowercase ipc302 works too", ["IPC-302"]),
             ("underscore bns_101 works", ["BNS-101"]),
             ("IPC-302 twice IPC-302 is deduped", ["IPC-302"]),
+            ("what about IPC-498A cruelty?", ["IPC-498A"]),
+            ("sedition ipc 124a", ["IPC-124A"]),
             ("no references here", []),
         ],
     )

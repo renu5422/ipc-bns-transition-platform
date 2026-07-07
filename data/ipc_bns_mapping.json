@@ -1,63 +1,4277 @@
 [
   {
     "id": "1",
-
     "ipc_code": "IPC-302",
     "ipc_title": "Murder",
-
     "bns_code": "BNS-101",
     "bns_title": "Homicide",
-
     "description": "Punishment for murder and unlawful killing offenses.",
-
     "chapter": "Offences Against Human Body",
-
     "keywords": [
       "murder",
       "homicide",
       "killing"
     ],
-
     "ai_summary": "This section explains offenses related to unlawful killing and corresponding punishments.",
-
     "validation_rules": [
       "keyword_match",
       "chapter_match"
     ],
-
     "created_at": "2026-05-02T10:00:00Z",
-
     "updated_at": "2026-05-02T10:00:00Z"
   },
-
   {
     "id": "2",
-
     "ipc_code": "IPC-375",
     "ipc_title": "Rape",
-
     "bns_code": "BNS-63",
     "bns_title": "Sexual Assault Offenses",
-
     "description": "Definition and punishment related to sexual assault crimes.",
-
     "chapter": "Offences Against Women",
-
     "keywords": [
       "rape",
       "sexual assault",
       "crime against women"
     ],
-
     "ai_summary": "This section defines sexual assault offenses and related punishments under revised legal structure.",
-
     "validation_rules": [
       "keyword_match",
       "chapter_match"
     ],
-
     "created_at": "2026-05-02T10:00:00Z",
-
     "updated_at": "2026-05-02T10:00:00Z"
+  },
+  {
+    "id": "3",
+    "ipc_code": "IPC-378",
+    "ipc_title": "Theft",
+    "bns_code": "BNS-303",
+    "bns_title": "Theft",
+    "description": "Definition of theft of movable property.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "theft",
+      "stealing",
+      "movable property"
+    ],
+    "ai_summary": "IPC-378 (Theft) transitions to BNS-303 (Theft) under Offences Against Property.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "4",
+    "ipc_code": "IPC-420",
+    "ipc_title": "Cheating and dishonestly inducing delivery of property",
+    "bns_code": "BNS-318",
+    "bns_title": "Cheating",
+    "description": "Punishment for cheating and fraud-based inducement.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "cheating",
+      "fraud",
+      "dishonesty"
+    ],
+    "ai_summary": "IPC-420 (Cheating and dishonestly inducing delivery of property) transitions to BNS-318 (Cheating) under Offences Against Property.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "5",
+    "ipc_code": "IPC-307",
+    "ipc_title": "Attempt to murder",
+    "bns_code": "BNS-109",
+    "bns_title": "Attempt to murder",
+    "description": "Punishment for attempting to commit murder.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "attempt",
+      "murder",
+      "attempted killing"
+    ],
+    "ai_summary": "IPC-307 (Attempt to murder) transitions to BNS-109 (Attempt to murder) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "6",
+    "ipc_code": "IPC-306",
+    "ipc_title": "Abetment of suicide",
+    "bns_code": "BNS-108",
+    "bns_title": "Abetment of suicide",
+    "description": "Punishment for abetting the commission of suicide.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "abetment",
+      "suicide",
+      "instigation"
+    ],
+    "ai_summary": "IPC-306 (Abetment of suicide) transitions to BNS-108 (Abetment of suicide) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "7",
+    "ipc_code": "IPC-323",
+    "ipc_title": "Voluntarily causing hurt",
+    "bns_code": "BNS-115",
+    "bns_title": "Voluntarily causing hurt",
+    "description": "Punishment for voluntarily causing hurt.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "hurt",
+      "assault",
+      "injury"
+    ],
+    "ai_summary": "IPC-323 (Voluntarily causing hurt) transitions to BNS-115 (Voluntarily causing hurt) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "8",
+    "ipc_code": "IPC-354",
+    "ipc_title": "Assault on woman with intent to outrage modesty",
+    "bns_code": "BNS-74",
+    "bns_title": "Assault to outrage modesty of woman",
+    "description": "Assault or criminal force against a woman intending to outrage modesty.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "assault",
+      "modesty",
+      "criminal force"
+    ],
+    "ai_summary": "IPC-354 (Assault on woman with intent to outrage modesty) transitions to BNS-74 (Assault to outrage modesty of woman) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "9",
+    "ipc_code": "IPC-392",
+    "ipc_title": "Robbery",
+    "bns_code": "BNS-309",
+    "bns_title": "Robbery",
+    "description": "Punishment for robbery.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "robbery",
+      "extortion",
+      "violence"
+    ],
+    "ai_summary": "IPC-392 (Robbery) transitions to BNS-309 (Robbery) under Offences Against Property.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "10",
+    "ipc_code": "IPC-395",
+    "ipc_title": "Dacoity",
+    "bns_code": "BNS-310",
+    "bns_title": "Dacoity",
+    "description": "Punishment for dacoity committed by five or more persons.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "dacoity",
+      "gang robbery",
+      "armed"
+    ],
+    "ai_summary": "IPC-395 (Dacoity) transitions to BNS-310 (Dacoity) under Offences Against Property.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "11",
+    "ipc_code": "IPC-411",
+    "ipc_title": "Dishonestly receiving stolen property",
+    "bns_code": "BNS-317",
+    "bns_title": "Receiving stolen property",
+    "description": "Punishment for dishonestly receiving or retaining stolen property.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "stolen property",
+      "receiving",
+      "dishonesty"
+    ],
+    "ai_summary": "IPC-411 (Dishonestly receiving stolen property) transitions to BNS-317 (Receiving stolen property) under Offences Against Property.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "12",
+    "ipc_code": "IPC-447",
+    "ipc_title": "Criminal trespass",
+    "bns_code": "BNS-329",
+    "bns_title": "Criminal trespass",
+    "description": "Punishment for criminal trespass on property.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "trespass",
+      "property",
+      "unlawful entry"
+    ],
+    "ai_summary": "IPC-447 (Criminal trespass) transitions to BNS-329 (Criminal trespass) under Offences Against Property.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "13",
+    "ipc_code": "IPC-498A",
+    "ipc_title": "Cruelty by husband or relatives of husband",
+    "bns_code": "BNS-85",
+    "bns_title": "Cruelty by husband or his relatives",
+    "description": "Cruelty against a married woman by husband or in-laws.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "cruelty",
+      "dowry harassment",
+      "married woman"
+    ],
+    "ai_summary": "IPC-498A (Cruelty by husband or relatives of husband) transitions to BNS-85 (Cruelty by husband or his relatives) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "14",
+    "ipc_code": "IPC-304B",
+    "ipc_title": "Dowry death",
+    "bns_code": "BNS-80",
+    "bns_title": "Dowry death",
+    "description": "Death of a woman caused by dowry-related cruelty or harassment.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "dowry",
+      "death",
+      "harassment"
+    ],
+    "ai_summary": "IPC-304B (Dowry death) transitions to BNS-80 (Dowry death) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "15",
+    "ipc_code": "IPC-124A",
+    "ipc_title": "Sedition",
+    "bns_code": "BNS-152",
+    "bns_title": "Acts endangering sovereignty, unity and integrity of India",
+    "description": "Sedition reframed as acts endangering national sovereignty and integrity.",
+    "chapter": "Offences Against the State",
+    "keywords": [
+      "sedition",
+      "sovereignty",
+      "state security"
+    ],
+    "ai_summary": "IPC-124A (Sedition) transitions to BNS-152 (Acts endangering sovereignty, unity and integrity of India) under Offences Against the State.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "16",
+    "ipc_code": "IPC-499",
+    "ipc_title": "Defamation",
+    "bns_code": "BNS-356",
+    "bns_title": "Defamation",
+    "description": "Definition and punishment for defamation.",
+    "chapter": "Defamation",
+    "keywords": [
+      "defamation",
+      "reputation",
+      "libel"
+    ],
+    "ai_summary": "IPC-499 (Defamation) transitions to BNS-356 (Defamation) under Defamation.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "17",
+    "ipc_code": "IPC-363",
+    "ipc_title": "Kidnapping",
+    "bns_code": "BNS-137",
+    "bns_title": "Kidnapping",
+    "description": "Punishment for kidnapping from lawful guardianship or from India.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "kidnapping",
+      "abduction",
+      "guardianship"
+    ],
+    "ai_summary": "IPC-363 (Kidnapping) transitions to BNS-137 (Kidnapping) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "18",
+    "ipc_code": "IPC-376",
+    "ipc_title": "Punishment for rape",
+    "bns_code": "BNS-64",
+    "bns_title": "Punishment for rape",
+    "description": "Punishment provisions for the offence of rape.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "rape",
+      "punishment",
+      "sexual offence"
+    ],
+    "ai_summary": "IPC-376 (Punishment for rape) transitions to BNS-64 (Punishment for rape) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "19",
+    "ipc_code": "IPC-300",
+    "ipc_title": "Murder (definition)",
+    "bns_code": "BNS-100",
+    "bns_title": "Culpable homicide",
+    "description": "Definition distinguishing murder from culpable homicide.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "culpable homicide",
+      "murder definition",
+      "intention"
+    ],
+    "ai_summary": "IPC-300 (Murder (definition)) transitions to BNS-100 (Culpable homicide) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "20",
+    "ipc_code": "IPC-509",
+    "ipc_title": "Word, gesture or act intended to insult the modesty of a woman",
+    "bns_code": "BNS-79",
+    "bns_title": "Insult to modesty of a woman",
+    "description": "Insulting the modesty of a woman by word, gesture, or act.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "modesty",
+      "insult",
+      "harassment"
+    ],
+    "ai_summary": "IPC-509 (Word, gesture or act intended to insult the modesty of a woman) transitions to BNS-79 (Insult to modesty of a woman) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T12:00:00Z",
+    "updated_at": "2026-07-04T12:00:00Z"
+  },
+  {
+    "id": "21",
+    "ipc_code": "IPC-34",
+    "ipc_title": "Acts done by several persons in furtherance of common intention",
+    "bns_code": "BNS-3(5)",
+    "bns_title": "Common intention",
+    "description": "Joint liability for acts done with common intention.",
+    "chapter": "General Explanations and Exceptions",
+    "keywords": [
+      "common intention",
+      "joint liability",
+      "several persons"
+    ],
+    "ai_summary": "IPC-34 (Acts done by several persons in furtherance of common intention) transitions to BNS-3(5) (Common intention) under General Explanations and Exceptions.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "22",
+    "ipc_code": "IPC-96",
+    "ipc_title": "Things done in private defence",
+    "bns_code": "BNS-34",
+    "bns_title": "Things done in private defence",
+    "description": "Nothing is an offence done in exercise of the right of private defence.",
+    "chapter": "General Explanations and Exceptions",
+    "keywords": [
+      "private defence",
+      "self defence",
+      "justification"
+    ],
+    "ai_summary": "IPC-96 (Things done in private defence) transitions to BNS-34 (Things done in private defence) under General Explanations and Exceptions.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "23",
+    "ipc_code": "IPC-120A",
+    "ipc_title": "Definition of criminal conspiracy",
+    "bns_code": "BNS-61(1)",
+    "bns_title": "Criminal conspiracy (definition)",
+    "description": "Agreement between two or more persons to do an illegal act.",
+    "chapter": "Offences Against the State",
+    "keywords": [
+      "conspiracy",
+      "agreement",
+      "illegal act"
+    ],
+    "ai_summary": "IPC-120A (Definition of criminal conspiracy) transitions to BNS-61(1) (Criminal conspiracy (definition)) under Offences Against the State.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "24",
+    "ipc_code": "IPC-120B",
+    "ipc_title": "Punishment of criminal conspiracy",
+    "bns_code": "BNS-61(2)",
+    "bns_title": "Criminal conspiracy (punishment)",
+    "description": "Punishment provisions for criminal conspiracy.",
+    "chapter": "Offences Against the State",
+    "keywords": [
+      "conspiracy",
+      "punishment",
+      "abetment"
+    ],
+    "ai_summary": "IPC-120B (Punishment of criminal conspiracy) transitions to BNS-61(2) (Criminal conspiracy (punishment)) under Offences Against the State.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "25",
+    "ipc_code": "IPC-121",
+    "ipc_title": "Waging war against the Government of India",
+    "bns_code": "BNS-147",
+    "bns_title": "Waging war against Government of India",
+    "description": "Waging or attempting to wage war against the Government of India.",
+    "chapter": "Offences Against the State",
+    "keywords": [
+      "waging war",
+      "treason",
+      "government"
+    ],
+    "ai_summary": "IPC-121 (Waging war against the Government of India) transitions to BNS-147 (Waging war against Government of India) under Offences Against the State.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "26",
+    "ipc_code": "IPC-121A",
+    "ipc_title": "Conspiracy to commit offences punishable by section 121",
+    "bns_code": "BNS-148",
+    "bns_title": "Conspiracy to wage war",
+    "description": "Conspiring to wage war against the Government of India.",
+    "chapter": "Offences Against the State",
+    "keywords": [
+      "conspiracy",
+      "war",
+      "state"
+    ],
+    "ai_summary": "IPC-121A (Conspiracy to commit offences punishable by section 121) transitions to BNS-148 (Conspiracy to wage war) under Offences Against the State.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "27",
+    "ipc_code": "IPC-122",
+    "ipc_title": "Collecting arms with intention of waging war",
+    "bns_code": "BNS-149",
+    "bns_title": "Collecting arms to wage war",
+    "description": "Collecting men, arms or ammunition to wage war against India.",
+    "chapter": "Offences Against the State",
+    "keywords": [
+      "arms",
+      "ammunition",
+      "war preparation"
+    ],
+    "ai_summary": "IPC-122 (Collecting arms with intention of waging war) transitions to BNS-149 (Collecting arms to wage war) under Offences Against the State.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "28",
+    "ipc_code": "IPC-141",
+    "ipc_title": "Unlawful assembly",
+    "bns_code": "BNS-189(1)",
+    "bns_title": "Unlawful assembly (definition)",
+    "description": "Assembly of five or more persons with unlawful common object.",
+    "chapter": "Offences Against Public Tranquility",
+    "keywords": [
+      "unlawful assembly",
+      "five persons",
+      "common object"
+    ],
+    "ai_summary": "IPC-141 (Unlawful assembly) transitions to BNS-189(1) (Unlawful assembly (definition)) under Offences Against Public Tranquility.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "29",
+    "ipc_code": "IPC-143",
+    "ipc_title": "Punishment for unlawful assembly",
+    "bns_code": "BNS-189(2)",
+    "bns_title": "Unlawful assembly (punishment)",
+    "description": "Punishment for being a member of an unlawful assembly.",
+    "chapter": "Offences Against Public Tranquility",
+    "keywords": [
+      "unlawful assembly",
+      "member",
+      "punishment"
+    ],
+    "ai_summary": "IPC-143 (Punishment for unlawful assembly) transitions to BNS-189(2) (Unlawful assembly (punishment)) under Offences Against Public Tranquility.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "30",
+    "ipc_code": "IPC-146",
+    "ipc_title": "Rioting",
+    "bns_code": "BNS-191(1)",
+    "bns_title": "Rioting (definition)",
+    "description": "Force or violence used by an unlawful assembly.",
+    "chapter": "Offences Against Public Tranquility",
+    "keywords": [
+      "rioting",
+      "violence",
+      "assembly"
+    ],
+    "ai_summary": "IPC-146 (Rioting) transitions to BNS-191(1) (Rioting (definition)) under Offences Against Public Tranquility.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "31",
+    "ipc_code": "IPC-147",
+    "ipc_title": "Punishment for rioting",
+    "bns_code": "BNS-191(2)",
+    "bns_title": "Rioting (punishment)",
+    "description": "Punishment for the offence of rioting.",
+    "chapter": "Offences Against Public Tranquility",
+    "keywords": [
+      "rioting",
+      "punishment",
+      "public order"
+    ],
+    "ai_summary": "IPC-147 (Punishment for rioting) transitions to BNS-191(2) (Rioting (punishment)) under Offences Against Public Tranquility.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "32",
+    "ipc_code": "IPC-148",
+    "ipc_title": "Rioting, armed with deadly weapon",
+    "bns_code": "BNS-191(3)",
+    "bns_title": "Rioting armed with deadly weapon",
+    "description": "Rioting while armed with a deadly weapon.",
+    "chapter": "Offences Against Public Tranquility",
+    "keywords": [
+      "rioting",
+      "deadly weapon",
+      "armed"
+    ],
+    "ai_summary": "IPC-148 (Rioting, armed with deadly weapon) transitions to BNS-191(3) (Rioting armed with deadly weapon) under Offences Against Public Tranquility.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "33",
+    "ipc_code": "IPC-149",
+    "ipc_title": "Every member of unlawful assembly guilty of offence",
+    "bns_code": "BNS-190",
+    "bns_title": "Liability of members of unlawful assembly",
+    "description": "Constructive liability of every member for offences of the assembly.",
+    "chapter": "Offences Against Public Tranquility",
+    "keywords": [
+      "constructive liability",
+      "common object",
+      "assembly"
+    ],
+    "ai_summary": "IPC-149 (Every member of unlawful assembly guilty of offence) transitions to BNS-190 (Liability of members of unlawful assembly) under Offences Against Public Tranquility.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "34",
+    "ipc_code": "IPC-153A",
+    "ipc_title": "Promoting enmity between different groups",
+    "bns_code": "BNS-196",
+    "bns_title": "Promoting enmity between groups",
+    "description": "Promoting enmity on grounds of religion, race, language etc.",
+    "chapter": "Offences Against Public Tranquility",
+    "keywords": [
+      "enmity",
+      "hatred",
+      "groups"
+    ],
+    "ai_summary": "IPC-153A (Promoting enmity between different groups) transitions to BNS-196 (Promoting enmity between groups) under Offences Against Public Tranquility.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "35",
+    "ipc_code": "IPC-159",
+    "ipc_title": "Affray",
+    "bns_code": "BNS-194(1)",
+    "bns_title": "Affray",
+    "description": "Two or more persons fighting in a public place disturbing peace.",
+    "chapter": "Offences Against Public Tranquility",
+    "keywords": [
+      "affray",
+      "public fight",
+      "disturbance"
+    ],
+    "ai_summary": "IPC-159 (Affray) transitions to BNS-194(1) (Affray) under Offences Against Public Tranquility.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "36",
+    "ipc_code": "IPC-186",
+    "ipc_title": "Obstructing public servant in discharge of public functions",
+    "bns_code": "BNS-221",
+    "bns_title": "Obstructing public servant",
+    "description": "Voluntarily obstructing a public servant in discharge of functions.",
+    "chapter": "Contempts of the Lawful Authority of Public Servants",
+    "keywords": [
+      "obstruction",
+      "public servant",
+      "duty"
+    ],
+    "ai_summary": "IPC-186 (Obstructing public servant in discharge of public functions) transitions to BNS-221 (Obstructing public servant) under Contempts of the Lawful Authority of Public Servants.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "37",
+    "ipc_code": "IPC-191",
+    "ipc_title": "Giving false evidence",
+    "bns_code": "BNS-227",
+    "bns_title": "Giving false evidence (definition)",
+    "description": "Making a false statement while legally bound to state the truth.",
+    "chapter": "False Evidence and Offences Against Public Justice",
+    "keywords": [
+      "false evidence",
+      "perjury",
+      "oath"
+    ],
+    "ai_summary": "IPC-191 (Giving false evidence) transitions to BNS-227 (Giving false evidence (definition)) under False Evidence and Offences Against Public Justice.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "38",
+    "ipc_code": "IPC-193",
+    "ipc_title": "Punishment for false evidence",
+    "bns_code": "BNS-229",
+    "bns_title": "Punishment for false evidence",
+    "description": "Punishment for intentionally giving or fabricating false evidence.",
+    "chapter": "False Evidence and Offences Against Public Justice",
+    "keywords": [
+      "false evidence",
+      "fabrication",
+      "punishment"
+    ],
+    "ai_summary": "IPC-193 (Punishment for false evidence) transitions to BNS-229 (Punishment for false evidence) under False Evidence and Offences Against Public Justice.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "39",
+    "ipc_code": "IPC-201",
+    "ipc_title": "Causing disappearance of evidence of offence",
+    "bns_code": "BNS-238",
+    "bns_title": "Causing disappearance of evidence",
+    "description": "Destroying evidence or giving false information to screen an offender.",
+    "chapter": "False Evidence and Offences Against Public Justice",
+    "keywords": [
+      "evidence",
+      "screening offender",
+      "destruction"
+    ],
+    "ai_summary": "IPC-201 (Causing disappearance of evidence of offence) transitions to BNS-238 (Causing disappearance of evidence) under False Evidence and Offences Against Public Justice.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "40",
+    "ipc_code": "IPC-212",
+    "ipc_title": "Harbouring offender",
+    "bns_code": "BNS-249",
+    "bns_title": "Harbouring offender",
+    "description": "Harbouring or concealing a person known to be an offender.",
+    "chapter": "False Evidence and Offences Against Public Justice",
+    "keywords": [
+      "harbouring",
+      "offender",
+      "concealment"
+    ],
+    "ai_summary": "IPC-212 (Harbouring offender) transitions to BNS-249 (Harbouring offender) under False Evidence and Offences Against Public Justice.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "41",
+    "ipc_code": "IPC-268",
+    "ipc_title": "Public nuisance",
+    "bns_code": "BNS-270",
+    "bns_title": "Public nuisance",
+    "description": "Act causing common injury, danger or annoyance to the public.",
+    "chapter": "Offences Affecting Public Health, Safety and Morals",
+    "keywords": [
+      "nuisance",
+      "public",
+      "annoyance"
+    ],
+    "ai_summary": "IPC-268 (Public nuisance) transitions to BNS-270 (Public nuisance) under Offences Affecting Public Health, Safety and Morals.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "42",
+    "ipc_code": "IPC-272",
+    "ipc_title": "Adulteration of food or drink intended for sale",
+    "bns_code": "BNS-274",
+    "bns_title": "Adulteration of food or drink",
+    "description": "Adulterating food or drink to make it noxious for sale.",
+    "chapter": "Offences Affecting Public Health, Safety and Morals",
+    "keywords": [
+      "adulteration",
+      "food",
+      "noxious"
+    ],
+    "ai_summary": "IPC-272 (Adulteration of food or drink intended for sale) transitions to BNS-274 (Adulteration of food or drink) under Offences Affecting Public Health, Safety and Morals.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "43",
+    "ipc_code": "IPC-279",
+    "ipc_title": "Rash driving or riding on a public way",
+    "bns_code": "BNS-281",
+    "bns_title": "Rash driving on public way",
+    "description": "Rash or negligent driving endangering human life.",
+    "chapter": "Offences Affecting Public Health, Safety and Morals",
+    "keywords": [
+      "rash driving",
+      "negligence",
+      "public way"
+    ],
+    "ai_summary": "IPC-279 (Rash driving or riding on a public way) transitions to BNS-281 (Rash driving on public way) under Offences Affecting Public Health, Safety and Morals.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "44",
+    "ipc_code": "IPC-292",
+    "ipc_title": "Sale of obscene books etc.",
+    "bns_code": "BNS-294",
+    "bns_title": "Sale of obscene material",
+    "description": "Sale and distribution of obscene books and material.",
+    "chapter": "Offences Affecting Public Health, Safety and Morals",
+    "keywords": [
+      "obscenity",
+      "books",
+      "distribution"
+    ],
+    "ai_summary": "IPC-292 (Sale of obscene books etc.) transitions to BNS-294 (Sale of obscene material) under Offences Affecting Public Health, Safety and Morals.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "45",
+    "ipc_code": "IPC-294",
+    "ipc_title": "Obscene acts and songs",
+    "bns_code": "BNS-296",
+    "bns_title": "Obscene acts and songs",
+    "description": "Obscene acts or songs in public places.",
+    "chapter": "Offences Affecting Public Health, Safety and Morals",
+    "keywords": [
+      "obscene acts",
+      "public place",
+      "annoyance"
+    ],
+    "ai_summary": "IPC-294 (Obscene acts and songs) transitions to BNS-296 (Obscene acts and songs) under Offences Affecting Public Health, Safety and Morals.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "46",
+    "ipc_code": "IPC-295",
+    "ipc_title": "Injuring or defiling place of worship",
+    "bns_code": "BNS-298",
+    "bns_title": "Injuring or defiling place of worship",
+    "description": "Defiling a place of worship with intent to insult religion.",
+    "chapter": "Offences Relating to Religion",
+    "keywords": [
+      "place of worship",
+      "defiling",
+      "religion"
+    ],
+    "ai_summary": "IPC-295 (Injuring or defiling place of worship) transitions to BNS-298 (Injuring or defiling place of worship) under Offences Relating to Religion.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "47",
+    "ipc_code": "IPC-295A",
+    "ipc_title": "Deliberate acts intended to outrage religious feelings",
+    "bns_code": "BNS-299",
+    "bns_title": "Outraging religious feelings",
+    "description": "Deliberate and malicious acts intended to outrage religious feelings.",
+    "chapter": "Offences Relating to Religion",
+    "keywords": [
+      "religious feelings",
+      "insult",
+      "malicious"
+    ],
+    "ai_summary": "IPC-295A (Deliberate acts intended to outrage religious feelings) transitions to BNS-299 (Outraging religious feelings) under Offences Relating to Religion.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "48",
+    "ipc_code": "IPC-297",
+    "ipc_title": "Trespassing on burial places",
+    "bns_code": "BNS-301",
+    "bns_title": "Trespassing on burial places",
+    "description": "Trespass on burial grounds with intent to wound feelings.",
+    "chapter": "Offences Relating to Religion",
+    "keywords": [
+      "burial",
+      "trespass",
+      "funeral"
+    ],
+    "ai_summary": "IPC-297 (Trespassing on burial places) transitions to BNS-301 (Trespassing on burial places) under Offences Relating to Religion.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "49",
+    "ipc_code": "IPC-301",
+    "ipc_title": "Culpable homicide by causing death of person other than person intended",
+    "bns_code": "BNS-102",
+    "bns_title": "Culpable homicide by transfer of malice",
+    "description": "Death caused to a person other than the one intended.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "transferred malice",
+      "homicide",
+      "intention"
+    ],
+    "ai_summary": "IPC-301 (Culpable homicide by causing death of person other than person intended) transitions to BNS-102 (Culpable homicide by transfer of malice) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "50",
+    "ipc_code": "IPC-303",
+    "ipc_title": "Punishment for murder by life-convict",
+    "bns_code": "BNS-104",
+    "bns_title": "Murder by life-convict",
+    "description": "Murder committed by a person under sentence of life imprisonment.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "life convict",
+      "murder",
+      "punishment"
+    ],
+    "ai_summary": "IPC-303 (Punishment for murder by life-convict) transitions to BNS-104 (Murder by life-convict) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "51",
+    "ipc_code": "IPC-304",
+    "ipc_title": "Punishment for culpable homicide not amounting to murder",
+    "bns_code": "BNS-105",
+    "bns_title": "Culpable homicide (punishment)",
+    "description": "Punishment for culpable homicide not amounting to murder.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "culpable homicide",
+      "punishment",
+      "not murder"
+    ],
+    "ai_summary": "IPC-304 (Punishment for culpable homicide not amounting to murder) transitions to BNS-105 (Culpable homicide (punishment)) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "52",
+    "ipc_code": "IPC-304A",
+    "ipc_title": "Causing death by negligence",
+    "bns_code": "BNS-106(1)",
+    "bns_title": "Causing death by negligence",
+    "description": "Causing death by a rash or negligent act.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "negligence",
+      "rash act",
+      "death"
+    ],
+    "ai_summary": "IPC-304A (Causing death by negligence) transitions to BNS-106(1) (Causing death by negligence) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "53",
+    "ipc_code": "IPC-305",
+    "ipc_title": "Abetment of suicide of child or insane person",
+    "bns_code": "BNS-107",
+    "bns_title": "Abetment of suicide of child",
+    "description": "Abetting suicide of a child or person of unsound mind.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "abetment",
+      "suicide",
+      "child"
+    ],
+    "ai_summary": "IPC-305 (Abetment of suicide of child or insane person) transitions to BNS-107 (Abetment of suicide of child) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "54",
+    "ipc_code": "IPC-308",
+    "ipc_title": "Attempt to commit culpable homicide",
+    "bns_code": "BNS-110",
+    "bns_title": "Attempt to commit culpable homicide",
+    "description": "Attempting an act that would be culpable homicide.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "attempt",
+      "culpable homicide",
+      "endangerment"
+    ],
+    "ai_summary": "IPC-308 (Attempt to commit culpable homicide) transitions to BNS-110 (Attempt to commit culpable homicide) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "55",
+    "ipc_code": "IPC-309",
+    "ipc_title": "Attempt to commit suicide",
+    "bns_code": "BNS-226",
+    "bns_title": "Attempt to commit suicide to compel or restrain",
+    "description": "Attempt to die by suicide to compel or restrain exercise of lawful power.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "suicide attempt",
+      "compulsion",
+      "public servant"
+    ],
+    "ai_summary": "IPC-309 (Attempt to commit suicide) transitions to BNS-226 (Attempt to commit suicide to compel or restrain) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "56",
+    "ipc_code": "IPC-312",
+    "ipc_title": "Causing miscarriage",
+    "bns_code": "BNS-88",
+    "bns_title": "Causing miscarriage",
+    "description": "Voluntarily causing a woman with child to miscarry.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "miscarriage",
+      "pregnancy",
+      "voluntary"
+    ],
+    "ai_summary": "IPC-312 (Causing miscarriage) transitions to BNS-88 (Causing miscarriage) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "57",
+    "ipc_code": "IPC-319",
+    "ipc_title": "Hurt",
+    "bns_code": "BNS-114",
+    "bns_title": "Hurt (definition)",
+    "description": "Causing bodily pain, disease or infirmity.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "hurt",
+      "bodily pain",
+      "injury"
+    ],
+    "ai_summary": "IPC-319 (Hurt) transitions to BNS-114 (Hurt (definition)) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "58",
+    "ipc_code": "IPC-320",
+    "ipc_title": "Grievous hurt",
+    "bns_code": "BNS-116",
+    "bns_title": "Grievous hurt (definition)",
+    "description": "Kinds of hurt designated as grievous.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "grievous hurt",
+      "fracture",
+      "permanent damage"
+    ],
+    "ai_summary": "IPC-320 (Grievous hurt) transitions to BNS-116 (Grievous hurt (definition)) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "59",
+    "ipc_code": "IPC-322",
+    "ipc_title": "Voluntarily causing grievous hurt",
+    "bns_code": "BNS-117(1)",
+    "bns_title": "Voluntarily causing grievous hurt",
+    "description": "Voluntarily causing hurt that is grievous.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "grievous hurt",
+      "voluntary",
+      "intention"
+    ],
+    "ai_summary": "IPC-322 (Voluntarily causing grievous hurt) transitions to BNS-117(1) (Voluntarily causing grievous hurt) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "60",
+    "ipc_code": "IPC-324",
+    "ipc_title": "Voluntarily causing hurt by dangerous weapons",
+    "bns_code": "BNS-118(1)",
+    "bns_title": "Hurt by dangerous weapons",
+    "description": "Causing hurt using dangerous weapons or means.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "dangerous weapon",
+      "hurt",
+      "instrument"
+    ],
+    "ai_summary": "IPC-324 (Voluntarily causing hurt by dangerous weapons) transitions to BNS-118(1) (Hurt by dangerous weapons) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "61",
+    "ipc_code": "IPC-325",
+    "ipc_title": "Punishment for voluntarily causing grievous hurt",
+    "bns_code": "BNS-117(2)",
+    "bns_title": "Grievous hurt (punishment)",
+    "description": "Punishment for voluntarily causing grievous hurt.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "grievous hurt",
+      "punishment",
+      "assault"
+    ],
+    "ai_summary": "IPC-325 (Punishment for voluntarily causing grievous hurt) transitions to BNS-117(2) (Grievous hurt (punishment)) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "62",
+    "ipc_code": "IPC-326",
+    "ipc_title": "Voluntarily causing grievous hurt by dangerous weapons",
+    "bns_code": "BNS-118(2)",
+    "bns_title": "Grievous hurt by dangerous weapons",
+    "description": "Grievous hurt caused by dangerous weapons or means.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "grievous hurt",
+      "dangerous weapon",
+      "serious injury"
+    ],
+    "ai_summary": "IPC-326 (Voluntarily causing grievous hurt by dangerous weapons) transitions to BNS-118(2) (Grievous hurt by dangerous weapons) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "63",
+    "ipc_code": "IPC-326A",
+    "ipc_title": "Voluntarily causing grievous hurt by use of acid",
+    "bns_code": "BNS-124(1)",
+    "bns_title": "Grievous hurt by acid attack",
+    "description": "Causing grievous hurt by throwing or administering acid.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "acid attack",
+      "grievous hurt",
+      "disfigurement"
+    ],
+    "ai_summary": "IPC-326A (Voluntarily causing grievous hurt by use of acid) transitions to BNS-124(1) (Grievous hurt by acid attack) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "64",
+    "ipc_code": "IPC-326B",
+    "ipc_title": "Voluntarily throwing or attempting to throw acid",
+    "bns_code": "BNS-124(2)",
+    "bns_title": "Attempt to throw acid",
+    "description": "Attempting to throw or administer acid.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "acid",
+      "attempt",
+      "attack"
+    ],
+    "ai_summary": "IPC-326B (Voluntarily throwing or attempting to throw acid) transitions to BNS-124(2) (Attempt to throw acid) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "65",
+    "ipc_code": "IPC-330",
+    "ipc_title": "Voluntarily causing hurt to extort confession",
+    "bns_code": "BNS-120(1)",
+    "bns_title": "Hurt to extort confession",
+    "description": "Causing hurt to extort a confession or information.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "confession",
+      "extortion",
+      "custodial"
+    ],
+    "ai_summary": "IPC-330 (Voluntarily causing hurt to extort confession) transitions to BNS-120(1) (Hurt to extort confession) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "66",
+    "ipc_code": "IPC-336",
+    "ipc_title": "Act endangering life or personal safety of others",
+    "bns_code": "BNS-125",
+    "bns_title": "Act endangering life or personal safety",
+    "description": "Rash or negligent act endangering human life or safety.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "endangerment",
+      "rash act",
+      "safety"
+    ],
+    "ai_summary": "IPC-336 (Act endangering life or personal safety of others) transitions to BNS-125 (Act endangering life or personal safety) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "67",
+    "ipc_code": "IPC-337",
+    "ipc_title": "Causing hurt by act endangering life",
+    "bns_code": "BNS-125(a)",
+    "bns_title": "Hurt by act endangering life",
+    "description": "Causing hurt by a rash or negligent act.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "hurt",
+      "negligence",
+      "endangerment"
+    ],
+    "ai_summary": "IPC-337 (Causing hurt by act endangering life) transitions to BNS-125(a) (Hurt by act endangering life) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "68",
+    "ipc_code": "IPC-338",
+    "ipc_title": "Causing grievous hurt by act endangering life",
+    "bns_code": "BNS-125(b)",
+    "bns_title": "Grievous hurt by act endangering life",
+    "description": "Causing grievous hurt by a rash or negligent act.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "grievous hurt",
+      "negligence",
+      "endangerment"
+    ],
+    "ai_summary": "IPC-338 (Causing grievous hurt by act endangering life) transitions to BNS-125(b) (Grievous hurt by act endangering life) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "69",
+    "ipc_code": "IPC-339",
+    "ipc_title": "Wrongful restraint",
+    "bns_code": "BNS-126(1)",
+    "bns_title": "Wrongful restraint",
+    "description": "Voluntarily obstructing a person from proceeding in any direction.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "restraint",
+      "obstruction",
+      "movement"
+    ],
+    "ai_summary": "IPC-339 (Wrongful restraint) transitions to BNS-126(1) (Wrongful restraint) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "70",
+    "ipc_code": "IPC-340",
+    "ipc_title": "Wrongful confinement",
+    "bns_code": "BNS-127(1)",
+    "bns_title": "Wrongful confinement",
+    "description": "Wrongfully restraining a person within circumscribing limits.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "confinement",
+      "detention",
+      "restraint"
+    ],
+    "ai_summary": "IPC-340 (Wrongful confinement) transitions to BNS-127(1) (Wrongful confinement) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "71",
+    "ipc_code": "IPC-342",
+    "ipc_title": "Punishment for wrongful confinement",
+    "bns_code": "BNS-127(2)",
+    "bns_title": "Wrongful confinement (punishment)",
+    "description": "Punishment for wrongful confinement.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "confinement",
+      "punishment",
+      "liberty"
+    ],
+    "ai_summary": "IPC-342 (Punishment for wrongful confinement) transitions to BNS-127(2) (Wrongful confinement (punishment)) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "72",
+    "ipc_code": "IPC-349",
+    "ipc_title": "Force",
+    "bns_code": "BNS-128",
+    "bns_title": "Force",
+    "description": "Definition of force against another person.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "force",
+      "motion",
+      "contact"
+    ],
+    "ai_summary": "IPC-349 (Force) transitions to BNS-128 (Force) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "73",
+    "ipc_code": "IPC-350",
+    "ipc_title": "Criminal force",
+    "bns_code": "BNS-129",
+    "bns_title": "Criminal force",
+    "description": "Intentional use of force without consent to commit an offence.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "criminal force",
+      "consent",
+      "intention"
+    ],
+    "ai_summary": "IPC-350 (Criminal force) transitions to BNS-129 (Criminal force) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "74",
+    "ipc_code": "IPC-351",
+    "ipc_title": "Assault",
+    "bns_code": "BNS-130",
+    "bns_title": "Assault",
+    "description": "Gesture or preparation causing apprehension of criminal force.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "assault",
+      "apprehension",
+      "gesture"
+    ],
+    "ai_summary": "IPC-351 (Assault) transitions to BNS-130 (Assault) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "75",
+    "ipc_code": "IPC-352",
+    "ipc_title": "Punishment for assault or criminal force",
+    "bns_code": "BNS-131",
+    "bns_title": "Assault (punishment)",
+    "description": "Punishment for assault otherwise than on grave provocation.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "assault",
+      "punishment",
+      "provocation"
+    ],
+    "ai_summary": "IPC-352 (Punishment for assault or criminal force) transitions to BNS-131 (Assault (punishment)) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "76",
+    "ipc_code": "IPC-354A",
+    "ipc_title": "Sexual harassment",
+    "bns_code": "BNS-75",
+    "bns_title": "Sexual harassment",
+    "description": "Sexual harassment by physical contact, demands or remarks.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "sexual harassment",
+      "unwelcome advances",
+      "remarks"
+    ],
+    "ai_summary": "IPC-354A (Sexual harassment) transitions to BNS-75 (Sexual harassment) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "77",
+    "ipc_code": "IPC-354B",
+    "ipc_title": "Assault with intent to disrobe",
+    "bns_code": "BNS-76",
+    "bns_title": "Assault with intent to disrobe",
+    "description": "Assault or criminal force with intent to disrobe a woman.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "disrobe",
+      "assault",
+      "woman"
+    ],
+    "ai_summary": "IPC-354B (Assault with intent to disrobe) transitions to BNS-76 (Assault with intent to disrobe) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "78",
+    "ipc_code": "IPC-354C",
+    "ipc_title": "Voyeurism",
+    "bns_code": "BNS-77",
+    "bns_title": "Voyeurism",
+    "description": "Watching or capturing images of a woman in private act.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "voyeurism",
+      "privacy",
+      "images"
+    ],
+    "ai_summary": "IPC-354C (Voyeurism) transitions to BNS-77 (Voyeurism) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "79",
+    "ipc_code": "IPC-354D",
+    "ipc_title": "Stalking",
+    "bns_code": "BNS-78",
+    "bns_title": "Stalking",
+    "description": "Following or contacting a woman despite disinterest.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "stalking",
+      "following",
+      "harassment"
+    ],
+    "ai_summary": "IPC-354D (Stalking) transitions to BNS-78 (Stalking) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "80",
+    "ipc_code": "IPC-364",
+    "ipc_title": "Kidnapping in order to murder",
+    "bns_code": "BNS-140(1)",
+    "bns_title": "Kidnapping to murder",
+    "description": "Kidnapping or abducting in order to murder.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "kidnapping",
+      "murder",
+      "abduction"
+    ],
+    "ai_summary": "IPC-364 (Kidnapping in order to murder) transitions to BNS-140(1) (Kidnapping to murder) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "81",
+    "ipc_code": "IPC-364A",
+    "ipc_title": "Kidnapping for ransom",
+    "bns_code": "BNS-140(2)",
+    "bns_title": "Kidnapping for ransom",
+    "description": "Kidnapping for ransom with threat to life.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "ransom",
+      "kidnapping",
+      "hostage"
+    ],
+    "ai_summary": "IPC-364A (Kidnapping for ransom) transitions to BNS-140(2) (Kidnapping for ransom) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "82",
+    "ipc_code": "IPC-366",
+    "ipc_title": "Kidnapping woman to compel her marriage",
+    "bns_code": "BNS-87",
+    "bns_title": "Kidnapping woman to compel marriage",
+    "description": "Kidnapping or abducting a woman to compel marriage.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "kidnapping",
+      "forced marriage",
+      "abduction"
+    ],
+    "ai_summary": "IPC-366 (Kidnapping woman to compel her marriage) transitions to BNS-87 (Kidnapping woman to compel marriage) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "83",
+    "ipc_code": "IPC-370",
+    "ipc_title": "Trafficking of persons",
+    "bns_code": "BNS-143",
+    "bns_title": "Trafficking of person",
+    "description": "Trafficking of persons for exploitation.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "trafficking",
+      "exploitation",
+      "persons"
+    ],
+    "ai_summary": "IPC-370 (Trafficking of persons) transitions to BNS-143 (Trafficking of person) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "84",
+    "ipc_code": "IPC-370A",
+    "ipc_title": "Exploitation of a trafficked person",
+    "bns_code": "BNS-144",
+    "bns_title": "Exploitation of trafficked person",
+    "description": "Engaging a trafficked person for sexual exploitation.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "trafficking",
+      "exploitation",
+      "sexual"
+    ],
+    "ai_summary": "IPC-370A (Exploitation of a trafficked person) transitions to BNS-144 (Exploitation of trafficked person) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "85",
+    "ipc_code": "IPC-372",
+    "ipc_title": "Selling minor for purposes of prostitution",
+    "bns_code": "BNS-98",
+    "bns_title": "Selling child for prostitution",
+    "description": "Selling or hiring a child for prostitution.",
+    "chapter": "Offences Against Children",
+    "keywords": [
+      "minor",
+      "prostitution",
+      "selling"
+    ],
+    "ai_summary": "IPC-372 (Selling minor for purposes of prostitution) transitions to BNS-98 (Selling child for prostitution) under Offences Against Children.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "86",
+    "ipc_code": "IPC-373",
+    "ipc_title": "Buying minor for purposes of prostitution",
+    "bns_code": "BNS-99",
+    "bns_title": "Buying child for prostitution",
+    "description": "Buying or hiring a child for prostitution.",
+    "chapter": "Offences Against Children",
+    "keywords": [
+      "minor",
+      "prostitution",
+      "buying"
+    ],
+    "ai_summary": "IPC-373 (Buying minor for purposes of prostitution) transitions to BNS-99 (Buying child for prostitution) under Offences Against Children.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "87",
+    "ipc_code": "IPC-376D",
+    "ipc_title": "Gang rape",
+    "bns_code": "BNS-70(1)",
+    "bns_title": "Gang rape",
+    "description": "Rape committed by a group acting in concert.",
+    "chapter": "Offences Against Women",
+    "keywords": [
+      "gang rape",
+      "group",
+      "concert"
+    ],
+    "ai_summary": "IPC-376D (Gang rape) transitions to BNS-70(1) (Gang rape) under Offences Against Women.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "88",
+    "ipc_code": "IPC-377",
+    "ipc_title": "Unnatural offences",
+    "bns_code": "BNS-OMITTED-377",
+    "bns_title": "Omitted in BNS",
+    "description": "IPC 377 has no corresponding provision in the BNS.",
+    "chapter": "Offences Against Human Body",
+    "keywords": [
+      "unnatural offences",
+      "omitted",
+      "repealed"
+    ],
+    "ai_summary": "IPC-377 (Unnatural offences) transitions to BNS-OMITTED-377 (Omitted in BNS) under Offences Against Human Body.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "89",
+    "ipc_code": "IPC-379",
+    "ipc_title": "Punishment for theft",
+    "bns_code": "BNS-303(2)",
+    "bns_title": "Theft (punishment)",
+    "description": "Punishment for the offence of theft.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "theft",
+      "punishment",
+      "property"
+    ],
+    "ai_summary": "IPC-379 (Punishment for theft) transitions to BNS-303(2) (Theft (punishment)) under Offences Against Property.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "90",
+    "ipc_code": "IPC-381",
+    "ipc_title": "Theft by clerk or servant of property in possession of master",
+    "bns_code": "BNS-306",
+    "bns_title": "Theft by clerk or servant of property in possession of master",
+    "description": "Theft committed by a clerk or servant of property in the possession of their master, renumbered without substantive change.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "theft",
+      "clerk",
+      "servant",
+      "master",
+      "employee"
+    ],
+    "ai_summary": "IPC 381 on theft by a clerk or servant of the master's property maps directly to BNS Section 306.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "91",
+    "ipc_code": "IPC-382",
+    "ipc_title": "Theft after preparation made for causing death, hurt or restraint in order to the committing of the theft",
+    "bns_code": "BNS-307",
+    "bns_title": "Theft after preparation made for causing death, hurt or restraint in order to committing of theft",
+    "description": "Aggravated theft where the offender prepared to cause death, hurt or restraint to commit the theft or escape, carried over to BNS 307.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "theft",
+      "preparation",
+      "death",
+      "hurt",
+      "restraint"
+    ],
+    "ai_summary": "IPC 382 on theft after preparation to cause death, hurt or restraint corresponds to BNS Section 307.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "92",
+    "ipc_code": "IPC-383",
+    "ipc_title": "Extortion",
+    "bns_code": "BNS-308(1)",
+    "bns_title": "Extortion",
+    "description": "The definition of extortion, putting a person in fear of injury to dishonestly induce delivery of property, becomes BNS 308(1) as extortion is consolidated into one section.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "extortion",
+      "fear",
+      "injury",
+      "property",
+      "definition"
+    ],
+    "ai_summary": "IPC 383 defining extortion maps to BNS Section 308(1) within the consolidated extortion provision.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "93",
+    "ipc_code": "IPC-384",
+    "ipc_title": "Punishment for extortion",
+    "bns_code": "BNS-308(2)",
+    "bns_title": "Extortion",
+    "description": "The punishment provision for extortion becomes sub-section (2) of the consolidated BNS Section 308.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "extortion",
+      "punishment",
+      "imprisonment",
+      "fine"
+    ],
+    "ai_summary": "IPC 384 punishing extortion corresponds to BNS Section 308(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "94",
+    "ipc_code": "IPC-385",
+    "ipc_title": "Putting person in fear of injury in order to commit extortion",
+    "bns_code": "BNS-308(3)",
+    "bns_title": "Extortion",
+    "description": "Putting or attempting to put a person in fear of injury in order to commit extortion becomes BNS 308(3).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "extortion",
+      "fear",
+      "injury",
+      "threat"
+    ],
+    "ai_summary": "IPC 385 on putting a person in fear of injury to commit extortion maps to BNS Section 308(3).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "95",
+    "ipc_code": "IPC-386",
+    "ipc_title": "Extortion by putting a person in fear of death or grievous hurt",
+    "bns_code": "BNS-308(5)",
+    "bns_title": "Extortion",
+    "description": "Extortion committed by putting a person in fear of death or grievous hurt becomes BNS 308(5) per the official comparative table.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "extortion",
+      "death",
+      "grievous hurt",
+      "fear"
+    ],
+    "ai_summary": "IPC 386 on extortion by fear of death or grievous hurt corresponds to BNS Section 308(5).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "96",
+    "ipc_code": "IPC-387",
+    "ipc_title": "Putting person in fear of death or of grievous hurt, in order to commit extortion",
+    "bns_code": "BNS-308(4)",
+    "bns_title": "Extortion",
+    "description": "Putting or attempting to put a person in fear of death or grievous hurt in order to commit extortion becomes BNS 308(4).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "extortion",
+      "fear of death",
+      "grievous hurt",
+      "threat"
+    ],
+    "ai_summary": "IPC 387 on putting a person in fear of death or grievous hurt to commit extortion maps to BNS Section 308(4).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "97",
+    "ipc_code": "IPC-388",
+    "ipc_title": "Extortion by threat of accusation of an offence punishable with death or imprisonment for life, etc.",
+    "bns_code": "BNS-308(7)",
+    "bns_title": "Extortion",
+    "description": "Extortion by threatening accusation of an offence punishable with death or life imprisonment becomes BNS 308(7).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "extortion",
+      "accusation",
+      "threat",
+      "blackmail"
+    ],
+    "ai_summary": "IPC 388 on extortion by threat of grave accusation corresponds to BNS Section 308(7).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "98",
+    "ipc_code": "IPC-389",
+    "ipc_title": "Putting person in fear of accusation of offence, in order to commit extortion",
+    "bns_code": "BNS-308(6)",
+    "bns_title": "Extortion",
+    "description": "Putting a person in fear of accusation of an offence in order to commit extortion becomes BNS 308(6).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "extortion",
+      "accusation",
+      "fear",
+      "blackmail"
+    ],
+    "ai_summary": "IPC 389 on putting a person in fear of accusation to commit extortion maps to BNS Section 308(6).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "99",
+    "ipc_code": "IPC-390",
+    "ipc_title": "Robbery",
+    "bns_code": "BNS-309(1)",
+    "bns_title": "Robbery",
+    "description": "The definition of robbery, covering when theft or extortion becomes robbery, is retained in BNS 309 sub-sections (1) to (3).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "robbery",
+      "theft",
+      "extortion",
+      "definition"
+    ],
+    "ai_summary": "IPC 390 defining robbery corresponds to BNS Section 309(1)-(3) within the consolidated robbery provision.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "100",
+    "ipc_code": "IPC-391",
+    "ipc_title": "Dacoity",
+    "bns_code": "BNS-310(1)",
+    "bns_title": "Dacoity",
+    "description": "The definition of dacoity, robbery committed conjointly by five or more persons, becomes BNS 310(1).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "dacoity",
+      "robbery",
+      "five persons",
+      "gang"
+    ],
+    "ai_summary": "IPC 391 defining dacoity maps to BNS Section 310(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "101",
+    "ipc_code": "IPC-393",
+    "ipc_title": "Attempt to commit robbery",
+    "bns_code": "BNS-309(5)",
+    "bns_title": "Robbery",
+    "description": "Attempt to commit robbery becomes sub-section (5) of the consolidated BNS Section 309 on robbery.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "robbery",
+      "attempt",
+      "punishment"
+    ],
+    "ai_summary": "IPC 393 on attempt to commit robbery corresponds to BNS Section 309(5).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "102",
+    "ipc_code": "IPC-394",
+    "ipc_title": "Voluntarily causing hurt in committing robbery",
+    "bns_code": "BNS-309(6)",
+    "bns_title": "Robbery",
+    "description": "Voluntarily causing hurt while committing or attempting robbery becomes BNS 309(6).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "robbery",
+      "hurt",
+      "violence",
+      "aggravated"
+    ],
+    "ai_summary": "IPC 394 on causing hurt in committing robbery maps to BNS Section 309(6).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "103",
+    "ipc_code": "IPC-396",
+    "ipc_title": "Dacoity with murder",
+    "bns_code": "BNS-310(3)",
+    "bns_title": "Dacoity",
+    "description": "Dacoity with murder, where any one of five or more dacoits commits murder, becomes BNS 310(3).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "dacoity",
+      "murder",
+      "death penalty",
+      "gang"
+    ],
+    "ai_summary": "IPC 396 on dacoity with murder corresponds to BNS Section 310(3).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "104",
+    "ipc_code": "IPC-397",
+    "ipc_title": "Robbery, or dacoity, with attempt to cause death or grievous hurt",
+    "bns_code": "BNS-311",
+    "bns_title": "Robbery, or dacoity, with attempt to cause death or grievous hurt",
+    "description": "Robbery or dacoity with use of a deadly weapon or attempt to cause death or grievous hurt is renumbered as BNS 311.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "robbery",
+      "dacoity",
+      "deadly weapon",
+      "grievous hurt"
+    ],
+    "ai_summary": "IPC 397 on robbery or dacoity with attempt to cause death or grievous hurt maps to BNS Section 311.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "105",
+    "ipc_code": "IPC-398",
+    "ipc_title": "Attempt to commit robbery or dacoity when armed with deadly weapon",
+    "bns_code": "BNS-312",
+    "bns_title": "Attempt to commit robbery or dacoity when armed with deadly weapon",
+    "description": "Attempt to commit robbery or dacoity while armed with a deadly weapon is renumbered as BNS 312 without substantive change.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "robbery",
+      "dacoity",
+      "attempt",
+      "deadly weapon"
+    ],
+    "ai_summary": "IPC 398 on attempted armed robbery or dacoity corresponds to BNS Section 312.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "106",
+    "ipc_code": "IPC-399",
+    "ipc_title": "Making preparation to commit dacoity",
+    "bns_code": "BNS-310(4)",
+    "bns_title": "Dacoity",
+    "description": "Making preparation to commit dacoity becomes sub-section (4) of the consolidated BNS Section 310.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "dacoity",
+      "preparation",
+      "conspiracy"
+    ],
+    "ai_summary": "IPC 399 on preparation to commit dacoity maps to BNS Section 310(4).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "107",
+    "ipc_code": "IPC-400",
+    "ipc_title": "Punishment for belonging to gang of dacoits",
+    "bns_code": "BNS-310(6)",
+    "bns_title": "Dacoity",
+    "description": "Belonging to a gang of persons associated for the purpose of habitually committing dacoity becomes BNS 310(6).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "dacoity",
+      "gang",
+      "habitual",
+      "association"
+    ],
+    "ai_summary": "IPC 400 on belonging to a gang of dacoits corresponds to BNS Section 310(6).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "108",
+    "ipc_code": "IPC-401",
+    "ipc_title": "Punishment for belonging to gang of thieves",
+    "bns_code": "BNS-313",
+    "bns_title": "Punishment for belonging to gang of robbers, dacoits, etc.",
+    "description": "Belonging to a wandering gang associated for habitually committing theft or robbery is renumbered as BNS 313 covering gangs of robbers and dacoits.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "gang",
+      "thieves",
+      "robbers",
+      "habitual"
+    ],
+    "ai_summary": "IPC 401 on belonging to a gang of thieves maps to BNS Section 313.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "109",
+    "ipc_code": "IPC-402",
+    "ipc_title": "Assembling for purpose of committing dacoity",
+    "bns_code": "BNS-310(5)",
+    "bns_title": "Dacoity",
+    "description": "Assembling for the purpose of committing dacoity becomes sub-section (5) of the consolidated BNS Section 310.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "dacoity",
+      "assembly",
+      "preparation",
+      "gang"
+    ],
+    "ai_summary": "IPC 402 on assembling to commit dacoity corresponds to BNS Section 310(5).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "110",
+    "ipc_code": "IPC-403",
+    "ipc_title": "Dishonest misappropriation of property",
+    "bns_code": "BNS-314",
+    "bns_title": "Dishonest misappropriation of property",
+    "description": "Dishonest misappropriation or conversion of movable property to one's own use is renumbered as BNS 314 with a mandatory minimum fine introduced.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "misappropriation",
+      "dishonest",
+      "movable property",
+      "conversion"
+    ],
+    "ai_summary": "IPC 403 on dishonest misappropriation of property maps to BNS Section 314.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "111",
+    "ipc_code": "IPC-404",
+    "ipc_title": "Dishonest misappropriation of property possessed by deceased person at the time of his death",
+    "bns_code": "BNS-315",
+    "bns_title": "Dishonest misappropriation of property possessed by deceased person at the time of his death",
+    "description": "Misappropriation of property possessed by a deceased person at the time of death is renumbered as BNS 315.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "misappropriation",
+      "deceased",
+      "estate",
+      "property"
+    ],
+    "ai_summary": "IPC 404 on misappropriating a deceased person's property corresponds to BNS Section 315.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "112",
+    "ipc_code": "IPC-405",
+    "ipc_title": "Criminal breach of trust",
+    "bns_code": "BNS-316(1)",
+    "bns_title": "Criminal breach of trust",
+    "description": "The definition of criminal breach of trust becomes BNS 316(1) as all breach-of-trust provisions are consolidated into one section.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "criminal breach of trust",
+      "entrustment",
+      "dishonest",
+      "definition"
+    ],
+    "ai_summary": "IPC 405 defining criminal breach of trust maps to BNS Section 316(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "113",
+    "ipc_code": "IPC-406",
+    "ipc_title": "Punishment for criminal breach of trust",
+    "bns_code": "BNS-316(2)",
+    "bns_title": "Criminal breach of trust",
+    "description": "The punishment for criminal breach of trust becomes BNS 316(2), with imprisonment up to five years or fine or both.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "criminal breach of trust",
+      "punishment",
+      "entrustment"
+    ],
+    "ai_summary": "IPC 406 punishing criminal breach of trust corresponds to BNS Section 316(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "114",
+    "ipc_code": "IPC-407",
+    "ipc_title": "Criminal breach of trust by carrier, etc.",
+    "bns_code": "BNS-316(3)",
+    "bns_title": "Criminal breach of trust",
+    "description": "Criminal breach of trust by a carrier, wharfinger or warehouse-keeper becomes BNS 316(3).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "criminal breach of trust",
+      "carrier",
+      "warehouse",
+      "transport"
+    ],
+    "ai_summary": "IPC 407 on breach of trust by carrier maps to BNS Section 316(3).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "115",
+    "ipc_code": "IPC-408",
+    "ipc_title": "Criminal breach of trust by clerk or servant",
+    "bns_code": "BNS-316(4)",
+    "bns_title": "Criminal breach of trust",
+    "description": "Criminal breach of trust by a clerk or servant entrusted with property becomes BNS 316(4).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "criminal breach of trust",
+      "clerk",
+      "servant",
+      "employee"
+    ],
+    "ai_summary": "IPC 408 on breach of trust by clerk or servant corresponds to BNS Section 316(4).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "116",
+    "ipc_code": "IPC-409",
+    "ipc_title": "Criminal breach of trust by public servant, or by banker, merchant or agent",
+    "bns_code": "BNS-316(5)",
+    "bns_title": "Criminal breach of trust",
+    "description": "Aggravated criminal breach of trust by a public servant, banker, merchant or agent becomes BNS 316(5), retaining liability up to life imprisonment.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "criminal breach of trust",
+      "public servant",
+      "banker",
+      "agent"
+    ],
+    "ai_summary": "IPC 409 on breach of trust by public servant, banker, merchant or agent maps to BNS Section 316(5).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "117",
+    "ipc_code": "IPC-410",
+    "ipc_title": "Stolen property",
+    "bns_code": "BNS-317(1)",
+    "bns_title": "Stolen property",
+    "description": "The definition of stolen property becomes BNS 317(1) as all stolen-property offences are consolidated into one section.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "stolen property",
+      "definition",
+      "theft",
+      "receiving"
+    ],
+    "ai_summary": "IPC 410 defining stolen property corresponds to BNS Section 317(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "118",
+    "ipc_code": "IPC-412",
+    "ipc_title": "Dishonestly receiving property stolen in the commission of a dacoity",
+    "bns_code": "BNS-317(3)",
+    "bns_title": "Stolen property",
+    "description": "Dishonestly receiving property stolen in the commission of a dacoity becomes BNS 317(3).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "stolen property",
+      "dacoity",
+      "receiving",
+      "dishonest"
+    ],
+    "ai_summary": "IPC 412 on receiving property stolen in a dacoity maps to BNS Section 317(3).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "119",
+    "ipc_code": "IPC-413",
+    "ipc_title": "Habitually dealing in stolen property",
+    "bns_code": "BNS-317(4)",
+    "bns_title": "Stolen property",
+    "description": "Habitually receiving or dealing in stolen property becomes BNS 317(4).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "stolen property",
+      "habitual",
+      "dealing",
+      "receiver"
+    ],
+    "ai_summary": "IPC 413 on habitually dealing in stolen property corresponds to BNS Section 317(4).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "120",
+    "ipc_code": "IPC-414",
+    "ipc_title": "Assisting in concealment of stolen property",
+    "bns_code": "BNS-317(5)",
+    "bns_title": "Stolen property",
+    "description": "Voluntarily assisting in concealing, disposing of or making away with stolen property becomes BNS 317(5).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "stolen property",
+      "concealment",
+      "disposal",
+      "assistance"
+    ],
+    "ai_summary": "IPC 414 on assisting concealment of stolen property maps to BNS Section 317(5).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "121",
+    "ipc_code": "IPC-415",
+    "ipc_title": "Cheating",
+    "bns_code": "BNS-318(1)",
+    "bns_title": "Cheating",
+    "description": "The definition of cheating becomes BNS 318(1) as cheating provisions are consolidated into a single section.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "cheating",
+      "deception",
+      "fraud",
+      "definition"
+    ],
+    "ai_summary": "IPC 415 defining cheating corresponds to BNS Section 318(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "122",
+    "ipc_code": "IPC-416",
+    "ipc_title": "Cheating by personation",
+    "bns_code": "BNS-319(1)",
+    "bns_title": "Cheating by personation",
+    "description": "Cheating by pretending to be some other person becomes BNS 319(1).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "cheating",
+      "personation",
+      "impersonation",
+      "identity"
+    ],
+    "ai_summary": "IPC 416 on cheating by personation maps to BNS Section 319(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "123",
+    "ipc_code": "IPC-417",
+    "ipc_title": "Punishment for cheating",
+    "bns_code": "BNS-318(2)",
+    "bns_title": "Cheating",
+    "description": "The punishment for simple cheating becomes BNS 318(2), with the maximum term enhanced from one to three years.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "cheating",
+      "punishment",
+      "fraud"
+    ],
+    "ai_summary": "IPC 417 punishing cheating corresponds to BNS Section 318(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "124",
+    "ipc_code": "IPC-418",
+    "ipc_title": "Cheating with knowledge that wrongful loss may ensue to person whose interest offender is bound to protect",
+    "bns_code": "BNS-318(3)",
+    "bns_title": "Cheating",
+    "description": "Cheating with knowledge of wrongful loss to a person whose interest the offender is bound to protect becomes BNS 318(3).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "cheating",
+      "wrongful loss",
+      "fiduciary",
+      "protection"
+    ],
+    "ai_summary": "IPC 418 on cheating a person whose interest the offender must protect maps to BNS Section 318(3).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "125",
+    "ipc_code": "IPC-419",
+    "ipc_title": "Punishment for cheating by personation",
+    "bns_code": "BNS-319(2)",
+    "bns_title": "Cheating by personation",
+    "description": "The punishment for cheating by personation becomes BNS 319(2).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "cheating",
+      "personation",
+      "punishment",
+      "impersonation"
+    ],
+    "ai_summary": "IPC 419 punishing cheating by personation corresponds to BNS Section 319(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "126",
+    "ipc_code": "IPC-421",
+    "ipc_title": "Dishonest or fraudulent removal or concealment of property to prevent distribution among creditors",
+    "bns_code": "BNS-320",
+    "bns_title": "Dishonest or fraudulent removal or concealment of property to prevent distribution among creditors",
+    "description": "Fraudulent removal or concealment of property to defeat creditors is renumbered as BNS 320.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "fraudulent",
+      "creditors",
+      "concealment",
+      "property"
+    ],
+    "ai_summary": "IPC 421 on concealing property to defeat creditors maps to BNS Section 320.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "127",
+    "ipc_code": "IPC-422",
+    "ipc_title": "Dishonestly or fraudulently preventing debt being available for creditors",
+    "bns_code": "BNS-321",
+    "bns_title": "Dishonestly or fraudulently preventing debt being available for creditors",
+    "description": "Dishonestly preventing a debt or demand from being available for creditors is renumbered as BNS 321.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "fraudulent",
+      "debt",
+      "creditors",
+      "dishonest"
+    ],
+    "ai_summary": "IPC 422 on preventing a debt being available to creditors corresponds to BNS Section 321.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "128",
+    "ipc_code": "IPC-423",
+    "ipc_title": "Dishonest or fraudulent execution of deed of transfer containing false statement of consideration",
+    "bns_code": "BNS-322",
+    "bns_title": "Dishonest or fraudulent execution of deed of transfer containing false statement of consideration",
+    "description": "Fraudulent execution of a deed of transfer containing a false statement of consideration is renumbered as BNS 322.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "deed",
+      "transfer",
+      "false consideration",
+      "fraudulent"
+    ],
+    "ai_summary": "IPC 423 on fraudulent execution of a deed with false consideration maps to BNS Section 322.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "129",
+    "ipc_code": "IPC-424",
+    "ipc_title": "Dishonest or fraudulent removal or concealment of property",
+    "bns_code": "BNS-323",
+    "bns_title": "Dishonest or fraudulent removal or concealment of property",
+    "description": "Dishonest or fraudulent removal or concealment of property is renumbered as BNS 323.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "fraudulent",
+      "concealment",
+      "removal",
+      "property"
+    ],
+    "ai_summary": "IPC 424 on dishonest removal or concealment of property corresponds to BNS Section 323.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "130",
+    "ipc_code": "IPC-425",
+    "ipc_title": "Mischief",
+    "bns_code": "BNS-324(1)",
+    "bns_title": "Mischief",
+    "description": "The definition of mischief, causing wrongful loss or damage to property, becomes BNS 324(1) as mischief provisions are consolidated.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "mischief",
+      "damage",
+      "property",
+      "definition"
+    ],
+    "ai_summary": "IPC 425 defining mischief maps to BNS Section 324(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "131",
+    "ipc_code": "IPC-426",
+    "ipc_title": "Punishment for mischief",
+    "bns_code": "BNS-324(2)",
+    "bns_title": "Mischief",
+    "description": "The punishment for simple mischief becomes BNS 324(2).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "mischief",
+      "punishment",
+      "damage"
+    ],
+    "ai_summary": "IPC 426 punishing mischief corresponds to BNS Section 324(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "132",
+    "ipc_code": "IPC-427",
+    "ipc_title": "Mischief causing damage to the amount of fifty rupees",
+    "bns_code": "BNS-324(4)",
+    "bns_title": "Mischief",
+    "description": "Mischief causing pecuniary damage is covered by BNS 324(4), with the monetary threshold restructured to damage of twenty thousand rupees or more.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "mischief",
+      "damage",
+      "fifty rupees",
+      "pecuniary loss"
+    ],
+    "ai_summary": "IPC 427 on mischief causing damage of fifty rupees maps to BNS Section 324(4) with updated monetary thresholds.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "133",
+    "ipc_code": "IPC-428",
+    "ipc_title": "Mischief by killing or maiming animal of the value of ten rupees",
+    "bns_code": "BNS-325",
+    "bns_title": "Mischief by killing or maiming animal",
+    "description": "Mischief by killing or maiming an animal is consolidated into BNS 325, which merges IPC 428 and 429 and removes the monetary value thresholds.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "mischief",
+      "animal",
+      "killing",
+      "maiming"
+    ],
+    "ai_summary": "IPC 428 on killing or maiming an animal is merged with IPC 429 into BNS Section 325.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "134",
+    "ipc_code": "IPC-430",
+    "ipc_title": "Mischief by injury to works of irrigation or by wrongfully diverting water",
+    "bns_code": "BNS-326(a)",
+    "bns_title": "Mischief by injury, inundation, fire or explosive substance, etc.",
+    "description": "Mischief by injuring irrigation works or wrongfully diverting water becomes clause (a) of the consolidated BNS Section 326.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "mischief",
+      "irrigation",
+      "water",
+      "diversion"
+    ],
+    "ai_summary": "IPC 430 on mischief to irrigation works maps to BNS Section 326(a).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "135",
+    "ipc_code": "IPC-431",
+    "ipc_title": "Mischief by injury to public road, bridge, river or channel",
+    "bns_code": "BNS-326(b)",
+    "bns_title": "Mischief by injury, inundation, fire or explosive substance, etc.",
+    "description": "Mischief rendering a public road, bridge, navigable river or channel impassable or less safe becomes BNS 326(b).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "mischief",
+      "public road",
+      "bridge",
+      "river"
+    ],
+    "ai_summary": "IPC 431 on mischief to public roads or bridges corresponds to BNS Section 326(b).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "136",
+    "ipc_code": "IPC-432",
+    "ipc_title": "Mischief by causing inundation or obstruction to public drainage attended with damage",
+    "bns_code": "BNS-326(c)",
+    "bns_title": "Mischief by injury, inundation, fire or explosive substance, etc.",
+    "description": "Mischief by causing inundation or obstructing public drainage with damage becomes BNS 326(c).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "mischief",
+      "inundation",
+      "drainage",
+      "flooding"
+    ],
+    "ai_summary": "IPC 432 on causing inundation or drainage obstruction maps to BNS Section 326(c).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "137",
+    "ipc_code": "IPC-435",
+    "ipc_title": "Mischief by fire or explosive substance with intent to cause damage to amount of one hundred or (in case of agricultural produce) ten rupees",
+    "bns_code": "BNS-326(f)",
+    "bns_title": "Mischief by injury, inundation, fire or explosive substance, etc.",
+    "description": "Mischief by fire or explosive substance intending damage to property becomes BNS 326(f).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "mischief",
+      "fire",
+      "explosive",
+      "arson"
+    ],
+    "ai_summary": "IPC 435 on mischief by fire or explosives intending damage corresponds to BNS Section 326(f).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "138",
+    "ipc_code": "IPC-436",
+    "ipc_title": "Mischief by fire or explosive substance with intent to destroy house, etc.",
+    "bns_code": "BNS-326(g)",
+    "bns_title": "Mischief by injury, inundation, fire or explosive substance, etc.",
+    "description": "Mischief by fire or explosive substance intending to destroy a building used as a dwelling or place of worship becomes BNS 326(g).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "mischief",
+      "arson",
+      "fire",
+      "house",
+      "explosive"
+    ],
+    "ai_summary": "IPC 436 on arson intended to destroy a house maps to BNS Section 326(g).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "139",
+    "ipc_code": "IPC-440",
+    "ipc_title": "Mischief committed after preparation made for causing death or hurt",
+    "bns_code": "BNS-324(6)",
+    "bns_title": "Mischief",
+    "description": "Mischief committed after preparation for causing death, hurt or wrongful restraint becomes BNS 324(6).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "mischief",
+      "preparation",
+      "death",
+      "hurt"
+    ],
+    "ai_summary": "IPC 440 on mischief after preparation to cause death or hurt corresponds to BNS Section 324(6).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "140",
+    "ipc_code": "IPC-441",
+    "ipc_title": "Criminal trespass",
+    "bns_code": "BNS-329(1)",
+    "bns_title": "Criminal trespass and house-trespass",
+    "description": "The definition of criminal trespass becomes BNS 329(1) as trespass definitions and punishments are consolidated.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "criminal trespass",
+      "entry",
+      "property",
+      "definition"
+    ],
+    "ai_summary": "IPC 441 defining criminal trespass maps to BNS Section 329(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "141",
+    "ipc_code": "IPC-442",
+    "ipc_title": "House-trespass",
+    "bns_code": "BNS-329(2)",
+    "bns_title": "Criminal trespass and house-trespass",
+    "description": "The definition of house-trespass becomes BNS 329(2).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-trespass",
+      "dwelling",
+      "entry",
+      "definition"
+    ],
+    "ai_summary": "IPC 442 defining house-trespass corresponds to BNS Section 329(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "142",
+    "ipc_code": "IPC-443",
+    "ipc_title": "Lurking house-trespass",
+    "bns_code": "BNS-330(1)",
+    "bns_title": "House-trespass and house-breaking",
+    "description": "The definition of lurking house-trespass becomes BNS 330(1), with the separate night-time variant omitted.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "lurking house-trespass",
+      "concealment",
+      "trespass"
+    ],
+    "ai_summary": "IPC 443 defining lurking house-trespass maps to BNS Section 330(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "143",
+    "ipc_code": "IPC-444",
+    "ipc_title": "Lurking house-trespass by night",
+    "bns_code": "BNS-OMITTED-444",
+    "bns_title": "Omitted in BNS",
+    "description": "The separate offence of lurking house-trespass by night is deleted in the BNS per the official comparative table, with day and night variants merged into BNS 330.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "lurking house-trespass",
+      "night",
+      "omitted",
+      "deleted"
+    ],
+    "ai_summary": "IPC 444 on lurking house-trespass by night has no separate BNS equivalent as the night distinction was removed.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "144",
+    "ipc_code": "IPC-445",
+    "ipc_title": "House-breaking",
+    "bns_code": "BNS-330(2)",
+    "bns_title": "House-trespass and house-breaking",
+    "description": "The definition of house-breaking becomes BNS 330(2), with the separate night-time variant omitted.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-breaking",
+      "burglary",
+      "entry",
+      "definition"
+    ],
+    "ai_summary": "IPC 445 defining house-breaking corresponds to BNS Section 330(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "145",
+    "ipc_code": "IPC-446",
+    "ipc_title": "House-breaking by night",
+    "bns_code": "BNS-OMITTED-446",
+    "bns_title": "Omitted in BNS",
+    "description": "The separate offence of house-breaking by night is deleted in the BNS per the official comparative table, merged into the general house-breaking provision of BNS 330.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-breaking",
+      "night",
+      "omitted",
+      "deleted"
+    ],
+    "ai_summary": "IPC 446 on house-breaking by night has no separate BNS equivalent as the night distinction was removed.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "146",
+    "ipc_code": "IPC-448",
+    "ipc_title": "Punishment for house-trespass",
+    "bns_code": "BNS-329(4)",
+    "bns_title": "Criminal trespass and house-trespass",
+    "description": "The punishment for house-trespass becomes BNS 329(4).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-trespass",
+      "punishment",
+      "dwelling"
+    ],
+    "ai_summary": "IPC 448 punishing house-trespass maps to BNS Section 329(4).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "147",
+    "ipc_code": "IPC-449",
+    "ipc_title": "House-trespass in order to commit offence punishable with death",
+    "bns_code": "BNS-332(a)",
+    "bns_title": "House-trespass in order to commit offence",
+    "description": "House-trespass in order to commit an offence punishable with death becomes clause (a) of BNS Section 332.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-trespass",
+      "death",
+      "offence",
+      "aggravated"
+    ],
+    "ai_summary": "IPC 449 on house-trespass to commit a capital offence corresponds to BNS Section 332(a).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "148",
+    "ipc_code": "IPC-450",
+    "ipc_title": "House-trespass in order to commit offence punishable with imprisonment for life",
+    "bns_code": "BNS-332(b)",
+    "bns_title": "House-trespass in order to commit offence",
+    "description": "House-trespass in order to commit an offence punishable with imprisonment for life becomes BNS 332(b).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-trespass",
+      "life imprisonment",
+      "offence"
+    ],
+    "ai_summary": "IPC 450 on house-trespass to commit a life-imprisonment offence maps to BNS Section 332(b).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "149",
+    "ipc_code": "IPC-451",
+    "ipc_title": "House-trespass in order to commit offence punishable with imprisonment",
+    "bns_code": "BNS-332(c)",
+    "bns_title": "House-trespass in order to commit offence",
+    "description": "House-trespass in order to commit an offence punishable with imprisonment becomes BNS 332(c).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-trespass",
+      "imprisonment",
+      "offence"
+    ],
+    "ai_summary": "IPC 451 on house-trespass to commit an imprisonable offence corresponds to BNS Section 332(c).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "150",
+    "ipc_code": "IPC-452",
+    "ipc_title": "House-trespass after preparation for hurt, assault or wrongful restraint",
+    "bns_code": "BNS-333",
+    "bns_title": "House-trespass after preparation for hurt, assault or wrongful restraint",
+    "description": "House-trespass after preparation for causing hurt, assault or wrongful restraint is renumbered as BNS 333.",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-trespass",
+      "preparation",
+      "hurt",
+      "assault"
+    ],
+    "ai_summary": "IPC 452 on house-trespass after preparation for hurt maps to BNS Section 333.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "151",
+    "ipc_code": "IPC-453",
+    "ipc_title": "Punishment for lurking house-trespass or house-breaking",
+    "bns_code": "BNS-331(1)",
+    "bns_title": "Punishment for house-trespass or house-breaking",
+    "description": "The punishment for lurking house-trespass or house-breaking becomes BNS 331(1).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "lurking house-trespass",
+      "house-breaking",
+      "punishment"
+    ],
+    "ai_summary": "IPC 453 punishing lurking house-trespass or house-breaking corresponds to BNS Section 331(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "152",
+    "ipc_code": "IPC-454",
+    "ipc_title": "Lurking house-trespass or house-breaking in order to commit offence punishable with imprisonment",
+    "bns_code": "BNS-331(3)",
+    "bns_title": "Punishment for house-trespass or house-breaking",
+    "description": "Lurking house-trespass or house-breaking in order to commit an imprisonable offence becomes BNS 331(3).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-breaking",
+      "lurking house-trespass",
+      "offence",
+      "imprisonment"
+    ],
+    "ai_summary": "IPC 454 on house-breaking to commit an imprisonable offence maps to BNS Section 331(3).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "153",
+    "ipc_code": "IPC-456",
+    "ipc_title": "Punishment for lurking house-trespass or house-breaking by night",
+    "bns_code": "BNS-331(2)",
+    "bns_title": "Punishment for house-trespass or house-breaking",
+    "description": "The punishment for lurking house-trespass or house-breaking by night becomes BNS 331(2).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-breaking",
+      "night",
+      "lurking house-trespass",
+      "punishment"
+    ],
+    "ai_summary": "IPC 456 punishing lurking house-trespass or house-breaking by night corresponds to BNS Section 331(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "154",
+    "ipc_code": "IPC-457",
+    "ipc_title": "Lurking house-trespass or house-breaking by night in order to commit offence punishable with imprisonment",
+    "bns_code": "BNS-331(4)",
+    "bns_title": "Punishment for house-trespass or house-breaking",
+    "description": "Lurking house-trespass or house-breaking by night in order to commit an imprisonable offence becomes BNS 331(4).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-breaking",
+      "night",
+      "offence",
+      "burglary"
+    ],
+    "ai_summary": "IPC 457 on night house-breaking to commit an imprisonable offence maps to BNS Section 331(4).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "155",
+    "ipc_code": "IPC-459",
+    "ipc_title": "Grievous hurt caused whilst committing lurking house-trespass or house-breaking",
+    "bns_code": "BNS-331(7)",
+    "bns_title": "Punishment for house-trespass or house-breaking",
+    "description": "Causing grievous hurt while committing lurking house-trespass or house-breaking becomes BNS 331(7).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-breaking",
+      "grievous hurt",
+      "violence"
+    ],
+    "ai_summary": "IPC 459 on grievous hurt during house-breaking corresponds to BNS Section 331(7).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "156",
+    "ipc_code": "IPC-460",
+    "ipc_title": "All persons jointly concerned in lurking house-trespass or house-breaking by night punishable where death or grievous hurt caused by one of them",
+    "bns_code": "BNS-331(8)",
+    "bns_title": "Punishment for house-trespass or house-breaking",
+    "description": "Joint liability where death or grievous hurt is caused during night house-breaking becomes BNS 331(8).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "house-breaking",
+      "joint liability",
+      "death",
+      "grievous hurt"
+    ],
+    "ai_summary": "IPC 460 on joint liability in night house-breaking causing death or grievous hurt maps to BNS Section 331(8).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "157",
+    "ipc_code": "IPC-461",
+    "ipc_title": "Dishonestly breaking open receptacle containing property",
+    "bns_code": "BNS-334(1)",
+    "bns_title": "Dishonestly breaking open receptacle containing property",
+    "description": "Dishonestly breaking open a closed receptacle containing property becomes BNS 334(1).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "receptacle",
+      "breaking open",
+      "container",
+      "dishonest"
+    ],
+    "ai_summary": "IPC 461 on breaking open a receptacle containing property corresponds to BNS Section 334(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "158",
+    "ipc_code": "IPC-462",
+    "ipc_title": "Punishment for same offence when committed by person entrusted with custody",
+    "bns_code": "BNS-334(2)",
+    "bns_title": "Dishonestly breaking open receptacle containing property",
+    "description": "Breaking open a receptacle by a person entrusted with its custody becomes BNS 334(2).",
+    "chapter": "Offences Against Property",
+    "keywords": [
+      "receptacle",
+      "custody",
+      "entrusted",
+      "breach"
+    ],
+    "ai_summary": "IPC 462 on breaking open an entrusted receptacle maps to BNS Section 334(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "159",
+    "ipc_code": "IPC-463",
+    "ipc_title": "Forgery",
+    "bns_code": "BNS-336(1)",
+    "bns_title": "Forgery",
+    "description": "The definition of forgery becomes BNS 336(1) as forgery provisions are consolidated into a single section covering documents and electronic records.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "forgery",
+      "false document",
+      "electronic record",
+      "definition"
+    ],
+    "ai_summary": "IPC 463 defining forgery corresponds to BNS Section 336(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "160",
+    "ipc_code": "IPC-464",
+    "ipc_title": "Making a false document",
+    "bns_code": "BNS-335",
+    "bns_title": "Making a false document",
+    "description": "The provision defining the making of a false document or false electronic record is renumbered as BNS 335.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "false document",
+      "forgery",
+      "electronic record",
+      "making"
+    ],
+    "ai_summary": "IPC 464 on making a false document maps to BNS Section 335.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "161",
+    "ipc_code": "IPC-465",
+    "ipc_title": "Punishment for forgery",
+    "bns_code": "BNS-336(2)",
+    "bns_title": "Forgery",
+    "description": "The punishment for forgery becomes BNS 336(2).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "forgery",
+      "punishment",
+      "false document"
+    ],
+    "ai_summary": "IPC 465 punishing forgery corresponds to BNS Section 336(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "162",
+    "ipc_code": "IPC-466",
+    "ipc_title": "Forgery of record of Court or of public register, etc.",
+    "bns_code": "BNS-337",
+    "bns_title": "Forgery of record of Court or of public register, etc.",
+    "description": "Forgery of a court record or public register of births, marriages or burials is renumbered as BNS 337.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "forgery",
+      "court record",
+      "public register",
+      "official document"
+    ],
+    "ai_summary": "IPC 466 on forgery of court records or public registers maps to BNS Section 337.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "163",
+    "ipc_code": "IPC-467",
+    "ipc_title": "Forgery of valuable security, will, etc.",
+    "bns_code": "BNS-338",
+    "bns_title": "Forgery of valuable security, will, etc.",
+    "description": "Forgery of a valuable security, will or authority to adopt is renumbered as BNS 338, retaining punishment up to life imprisonment.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "forgery",
+      "valuable security",
+      "will",
+      "life imprisonment"
+    ],
+    "ai_summary": "IPC 467 on forgery of valuable security or will corresponds to BNS Section 338.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "164",
+    "ipc_code": "IPC-468",
+    "ipc_title": "Forgery for purpose of cheating",
+    "bns_code": "BNS-336(3)",
+    "bns_title": "Forgery",
+    "description": "Forgery committed for the purpose of cheating becomes BNS 336(3).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "forgery",
+      "cheating",
+      "fraud",
+      "false document"
+    ],
+    "ai_summary": "IPC 468 on forgery for the purpose of cheating maps to BNS Section 336(3).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "165",
+    "ipc_code": "IPC-469",
+    "ipc_title": "Forgery for purpose of harming reputation",
+    "bns_code": "BNS-336(4)",
+    "bns_title": "Forgery",
+    "description": "Forgery committed for the purpose of harming reputation becomes BNS 336(4).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "forgery",
+      "reputation",
+      "defamation",
+      "false document"
+    ],
+    "ai_summary": "IPC 469 on forgery to harm reputation corresponds to BNS Section 336(4).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "166",
+    "ipc_code": "IPC-470",
+    "ipc_title": "Forged document or electronic record",
+    "bns_code": "BNS-340(1)",
+    "bns_title": "Forged document or electronic record and using it as genuine",
+    "description": "The definition of a forged document or electronic record becomes BNS 340(1).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "forged document",
+      "electronic record",
+      "definition"
+    ],
+    "ai_summary": "IPC 470 defining a forged document or electronic record maps to BNS Section 340(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "167",
+    "ipc_code": "IPC-471",
+    "ipc_title": "Using as genuine a forged document or electronic record",
+    "bns_code": "BNS-340(2)",
+    "bns_title": "Forged document or electronic record and using it as genuine",
+    "description": "Fraudulently or dishonestly using a forged document or electronic record as genuine becomes BNS 340(2).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "forged document",
+      "using as genuine",
+      "electronic record",
+      "fraud"
+    ],
+    "ai_summary": "IPC 471 on using a forged document as genuine corresponds to BNS Section 340(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "168",
+    "ipc_code": "IPC-472",
+    "ipc_title": "Making or possessing counterfeit seal, etc., with intent to commit forgery punishable under section 467",
+    "bns_code": "BNS-341(1)",
+    "bns_title": "Making or possessing counterfeit seal, etc., with intent to commit forgery punishable under section 338",
+    "description": "Making or possessing a counterfeit seal or plate with intent to commit forgery of valuable securities becomes BNS 341(1), cross-referenced to BNS 338.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "counterfeit seal",
+      "forgery",
+      "plate",
+      "intent"
+    ],
+    "ai_summary": "IPC 472 on possessing a counterfeit seal for grave forgery maps to BNS Section 341(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "169",
+    "ipc_code": "IPC-473",
+    "ipc_title": "Making or possessing counterfeit seal, etc., with intent to commit forgery punishable otherwise",
+    "bns_code": "BNS-341(2)",
+    "bns_title": "Making or possessing counterfeit seal, etc., with intent to commit forgery punishable under section 338",
+    "description": "Making or possessing a counterfeit seal with intent to commit forgery punishable otherwise becomes BNS 341(2).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "counterfeit seal",
+      "forgery",
+      "possession",
+      "intent"
+    ],
+    "ai_summary": "IPC 473 on possessing a counterfeit seal for other forgery corresponds to BNS Section 341(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "170",
+    "ipc_code": "IPC-474",
+    "ipc_title": "Having possession of document described in section 466 or 467, knowing it to be forged and intending to use it as genuine",
+    "bns_code": "BNS-339",
+    "bns_title": "Having possession of document described in section 337 or section 338, knowing it to be forged and intending to use it as genuine",
+    "description": "Possession of a forged court record, public register or valuable security with intent to use it as genuine is renumbered as BNS 339.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "forged document",
+      "possession",
+      "intent",
+      "genuine"
+    ],
+    "ai_summary": "IPC 474 on possessing forged documents intending use as genuine maps to BNS Section 339.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "171",
+    "ipc_code": "IPC-475",
+    "ipc_title": "Counterfeiting device or mark used for authenticating documents described in section 467, or possessing counterfeit marked material",
+    "bns_code": "BNS-342(1)",
+    "bns_title": "Counterfeiting device or mark used for authenticating documents described in section 338, or possessing counterfeit marked material",
+    "description": "Counterfeiting an authentication device or mark for documents described in the valuable-security forgery provision becomes BNS 342(1).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "counterfeiting",
+      "authentication mark",
+      "device",
+      "documents"
+    ],
+    "ai_summary": "IPC 475 on counterfeiting authentication devices for valuable securities corresponds to BNS Section 342(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "172",
+    "ipc_code": "IPC-476",
+    "ipc_title": "Counterfeiting device or mark used for authenticating documents other than those described in section 467, or possessing counterfeit marked material",
+    "bns_code": "BNS-342(2)",
+    "bns_title": "Counterfeiting device or mark used for authenticating documents described in section 338, or possessing counterfeit marked material",
+    "description": "Counterfeiting an authentication device or mark for other documents becomes BNS 342(2).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "counterfeiting",
+      "authentication mark",
+      "documents",
+      "possession"
+    ],
+    "ai_summary": "IPC 476 on counterfeiting authentication devices for other documents maps to BNS Section 342(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "173",
+    "ipc_code": "IPC-477",
+    "ipc_title": "Fraudulent cancellation, destruction, etc., of will, authority to adopt, or valuable security",
+    "bns_code": "BNS-343",
+    "bns_title": "Fraudulent cancellation, destruction, etc., of will, authority to adopt, or valuable security",
+    "description": "Fraudulent cancellation or destruction of a will, authority to adopt or valuable security is renumbered as BNS 343.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "will",
+      "valuable security",
+      "destruction",
+      "fraudulent"
+    ],
+    "ai_summary": "IPC 477 on fraudulent destruction of a will or valuable security corresponds to BNS Section 343.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "174",
+    "ipc_code": "IPC-477A",
+    "ipc_title": "Falsification of accounts",
+    "bns_code": "BNS-344",
+    "bns_title": "Falsification of accounts",
+    "description": "Falsification of accounts by a clerk, officer or servant is renumbered as BNS 344 without substantive change.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "falsification",
+      "accounts",
+      "books",
+      "fraud"
+    ],
+    "ai_summary": "IPC 477A on falsification of accounts maps to BNS Section 344.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "175",
+    "ipc_code": "IPC-479",
+    "ipc_title": "Property mark",
+    "bns_code": "BNS-345(1)",
+    "bns_title": "Property mark",
+    "description": "The definition of a property mark becomes BNS 345(1) as property-mark provisions are consolidated.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "property mark",
+      "definition",
+      "goods"
+    ],
+    "ai_summary": "IPC 479 defining a property mark corresponds to BNS Section 345(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "176",
+    "ipc_code": "IPC-481",
+    "ipc_title": "Using a false property mark",
+    "bns_code": "BNS-345(2)",
+    "bns_title": "Property mark",
+    "description": "Using a false property mark becomes BNS 345(2).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "property mark",
+      "false mark",
+      "using"
+    ],
+    "ai_summary": "IPC 481 on using a false property mark maps to BNS Section 345(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "177",
+    "ipc_code": "IPC-482",
+    "ipc_title": "Punishment for using a false property mark",
+    "bns_code": "BNS-345(3)",
+    "bns_title": "Property mark",
+    "description": "The punishment for using a false property mark becomes BNS 345(3).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "property mark",
+      "false mark",
+      "punishment"
+    ],
+    "ai_summary": "IPC 482 punishing use of a false property mark corresponds to BNS Section 345(3).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "178",
+    "ipc_code": "IPC-483",
+    "ipc_title": "Counterfeiting a property mark used by another",
+    "bns_code": "BNS-347(1)",
+    "bns_title": "Counterfeiting a property mark",
+    "description": "Counterfeiting a property mark used by another person becomes BNS 347(1).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "property mark",
+      "counterfeiting",
+      "goods"
+    ],
+    "ai_summary": "IPC 483 on counterfeiting another's property mark maps to BNS Section 347(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "179",
+    "ipc_code": "IPC-484",
+    "ipc_title": "Counterfeiting a mark used by a public servant",
+    "bns_code": "BNS-347(2)",
+    "bns_title": "Counterfeiting a property mark",
+    "description": "Counterfeiting a property mark used by a public servant becomes BNS 347(2).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "property mark",
+      "public servant",
+      "counterfeiting"
+    ],
+    "ai_summary": "IPC 484 on counterfeiting a public servant's mark corresponds to BNS Section 347(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "180",
+    "ipc_code": "IPC-485",
+    "ipc_title": "Making or possession of any instrument for counterfeiting a property mark",
+    "bns_code": "BNS-348",
+    "bns_title": "Making or possession of any instrument for counterfeiting a property mark",
+    "description": "Making or possessing an instrument for counterfeiting a property mark is renumbered as BNS 348.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "property mark",
+      "instrument",
+      "counterfeiting",
+      "possession"
+    ],
+    "ai_summary": "IPC 485 on instruments for counterfeiting property marks maps to BNS Section 348.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "181",
+    "ipc_code": "IPC-486",
+    "ipc_title": "Selling goods marked with a counterfeit property mark",
+    "bns_code": "BNS-349",
+    "bns_title": "Selling goods marked with a counterfeit property mark",
+    "description": "Selling goods marked with a counterfeit property mark is renumbered as BNS 349.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "counterfeit",
+      "property mark",
+      "selling",
+      "goods"
+    ],
+    "ai_summary": "IPC 486 on selling goods with counterfeit property marks corresponds to BNS Section 349.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "182",
+    "ipc_code": "IPC-487",
+    "ipc_title": "Making a false mark upon any receptacle containing goods",
+    "bns_code": "BNS-350(1)",
+    "bns_title": "Making a false mark upon any receptacle containing goods",
+    "description": "Making a false mark upon a receptacle containing goods becomes BNS 350(1).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "false mark",
+      "receptacle",
+      "goods",
+      "packaging"
+    ],
+    "ai_summary": "IPC 487 on making a false mark on a goods receptacle maps to BNS Section 350(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "183",
+    "ipc_code": "IPC-488",
+    "ipc_title": "Punishment for making use of any such false mark",
+    "bns_code": "BNS-350(2)",
+    "bns_title": "Making a false mark upon any receptacle containing goods",
+    "description": "Making use of a false mark upon a receptacle containing goods becomes BNS 350(2).",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "false mark",
+      "receptacle",
+      "use",
+      "punishment"
+    ],
+    "ai_summary": "IPC 488 punishing use of a false receptacle mark corresponds to BNS Section 350(2).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "184",
+    "ipc_code": "IPC-489",
+    "ipc_title": "Tampering with property mark with intent to cause injury",
+    "bns_code": "BNS-346",
+    "bns_title": "Tampering with property mark with intent to cause injury",
+    "description": "Tampering with a property mark with intent to cause injury is renumbered as BNS 346.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "property mark",
+      "tampering",
+      "injury",
+      "removal"
+    ],
+    "ai_summary": "IPC 489 on tampering with a property mark maps to BNS Section 346.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "185",
+    "ipc_code": "IPC-489A",
+    "ipc_title": "Counterfeiting currency-notes or bank-notes",
+    "bns_code": "BNS-178",
+    "bns_title": "Counterfeiting coin, Government stamps, currency-notes or bank-notes",
+    "description": "Counterfeiting currency-notes or bank-notes is merged with coin and stamp counterfeiting into the consolidated BNS Section 178.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "counterfeiting",
+      "currency notes",
+      "bank notes",
+      "coin"
+    ],
+    "ai_summary": "IPC 489A on counterfeiting currency or bank notes is consolidated into BNS Section 178.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "186",
+    "ipc_code": "IPC-489B",
+    "ipc_title": "Using as genuine, forged or counterfeit currency-notes or bank-notes",
+    "bns_code": "BNS-179",
+    "bns_title": "Using as genuine, forged or counterfeit coin, Government stamp, currency-notes or bank-notes",
+    "description": "Using forged or counterfeit currency-notes or bank-notes as genuine is consolidated into BNS Section 179 along with coin and stamp offences.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "counterfeit currency",
+      "using as genuine",
+      "bank notes",
+      "forged"
+    ],
+    "ai_summary": "IPC 489B on using counterfeit currency as genuine is consolidated into BNS Section 179.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "187",
+    "ipc_code": "IPC-489C",
+    "ipc_title": "Possession of forged or counterfeit currency-notes or bank-notes",
+    "bns_code": "BNS-180",
+    "bns_title": "Possession of forged or counterfeit coin, Government stamp, currency-notes or bank-notes",
+    "description": "Possession of forged or counterfeit currency-notes or bank-notes is consolidated into BNS Section 180.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "counterfeit currency",
+      "possession",
+      "bank notes",
+      "forged"
+    ],
+    "ai_summary": "IPC 489C on possessing counterfeit currency is consolidated into BNS Section 180.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "188",
+    "ipc_code": "IPC-489D",
+    "ipc_title": "Making or possessing instruments or materials for forging or counterfeiting currency-notes or bank-notes",
+    "bns_code": "BNS-181",
+    "bns_title": "Making or possessing instruments or materials for forging or counterfeiting coin, Government stamp, currency-notes or bank-notes",
+    "description": "Making or possessing instruments or materials for counterfeiting currency-notes or bank-notes is consolidated into BNS Section 181.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "counterfeiting",
+      "instruments",
+      "currency notes",
+      "materials"
+    ],
+    "ai_summary": "IPC 489D on instruments for counterfeiting currency is consolidated into BNS Section 181.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "189",
+    "ipc_code": "IPC-489E",
+    "ipc_title": "Making or using documents resembling currency-notes or bank-notes",
+    "bns_code": "BNS-182",
+    "bns_title": "Making or using documents resembling currency-notes or bank-notes",
+    "description": "Making or using documents resembling currency-notes or bank-notes is renumbered as BNS 182.",
+    "chapter": "Offences Relating to Documents and Property Marks",
+    "keywords": [
+      "currency notes",
+      "resembling documents",
+      "bank notes",
+      "imitation"
+    ],
+    "ai_summary": "IPC 489E on documents resembling currency notes maps to BNS Section 182.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "190",
+    "ipc_code": "IPC-494",
+    "ipc_title": "Marrying again during lifetime of husband or wife",
+    "bns_code": "BNS-82(1)",
+    "bns_title": "Marrying again during lifetime of husband or wife",
+    "description": "Bigamy, marrying again during the lifetime of a husband or wife, becomes BNS 82(1), with concealment of the former marriage covered by 82(2).",
+    "chapter": "Offences Relating to Marriage",
+    "keywords": [
+      "bigamy",
+      "marriage",
+      "second marriage",
+      "spouse"
+    ],
+    "ai_summary": "IPC 494 on bigamy corresponds to BNS Section 82(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "191",
+    "ipc_code": "IPC-497",
+    "ipc_title": "Adultery",
+    "bns_code": "BNS-OMITTED-497",
+    "bns_title": "Omitted in BNS",
+    "description": "Adultery is deleted in the BNS per the official comparative table, consistent with the Supreme Court striking it down in Joseph Shine v. Union of India (2018).",
+    "chapter": "Offences Relating to Marriage",
+    "keywords": [
+      "adultery",
+      "omitted",
+      "decriminalized",
+      "Joseph Shine"
+    ],
+    "ai_summary": "IPC 497 on adultery has no BNS equivalent as the offence was decriminalized and omitted.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "192",
+    "ipc_code": "IPC-503",
+    "ipc_title": "Criminal intimidation",
+    "bns_code": "BNS-351(1)",
+    "bns_title": "Criminal intimidation",
+    "description": "The definition of criminal intimidation becomes BNS 351(1) as intimidation provisions are consolidated into one section.",
+    "chapter": "Criminal Intimidation, Insult and Annoyance",
+    "keywords": [
+      "criminal intimidation",
+      "threat",
+      "injury",
+      "definition"
+    ],
+    "ai_summary": "IPC 503 defining criminal intimidation maps to BNS Section 351(1).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "193",
+    "ipc_code": "IPC-504",
+    "ipc_title": "Intentional insult with intent to provoke breach of the peace",
+    "bns_code": "BNS-352",
+    "bns_title": "Intentional insult with intent to provoke breach of peace",
+    "description": "Intentional insult intended to provoke a breach of the peace is renumbered as BNS 352.",
+    "chapter": "Criminal Intimidation, Insult and Annoyance",
+    "keywords": [
+      "insult",
+      "provocation",
+      "breach of peace",
+      "abuse"
+    ],
+    "ai_summary": "IPC 504 on intentional insult to provoke breach of peace corresponds to BNS Section 352.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "194",
+    "ipc_code": "IPC-505",
+    "ipc_title": "Statements conducing to public mischief",
+    "bns_code": "BNS-353",
+    "bns_title": "Statements conducing to public mischief",
+    "description": "Statements, rumours or reports conducing to public mischief are renumbered as BNS 353, which expressly covers electronic means.",
+    "chapter": "Criminal Intimidation, Insult and Annoyance",
+    "keywords": [
+      "public mischief",
+      "rumour",
+      "false statement",
+      "fake news"
+    ],
+    "ai_summary": "IPC 505 on statements conducing to public mischief maps to BNS Section 353.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "195",
+    "ipc_code": "IPC-506",
+    "ipc_title": "Punishment for criminal intimidation",
+    "bns_code": "BNS-351(2)",
+    "bns_title": "Criminal intimidation",
+    "description": "The punishment for criminal intimidation becomes BNS 351(2), with the aggravated form involving threats of death or grievous hurt covered by BNS 351(3).",
+    "chapter": "Criminal Intimidation, Insult and Annoyance",
+    "keywords": [
+      "criminal intimidation",
+      "punishment",
+      "threat",
+      "aggravated"
+    ],
+    "ai_summary": "IPC 506 punishing criminal intimidation corresponds to BNS Sections 351(2) and 351(3).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "196",
+    "ipc_code": "IPC-507",
+    "ipc_title": "Criminal intimidation by an anonymous communication",
+    "bns_code": "BNS-351(4)",
+    "bns_title": "Criminal intimidation",
+    "description": "Criminal intimidation by anonymous communication becomes BNS 351(4).",
+    "chapter": "Criminal Intimidation, Insult and Annoyance",
+    "keywords": [
+      "criminal intimidation",
+      "anonymous",
+      "communication",
+      "threat"
+    ],
+    "ai_summary": "IPC 507 on anonymous criminal intimidation maps to BNS Section 351(4).",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "197",
+    "ipc_code": "IPC-508",
+    "ipc_title": "Act caused by inducing person to believe that he will be rendered an object of the Divine displeasure",
+    "bns_code": "BNS-354",
+    "bns_title": "Act caused by inducing person to believe that he will be rendered an object of Divine displeasure",
+    "description": "Inducing a person to act by making them believe they will become an object of Divine displeasure is renumbered as BNS 354.",
+    "chapter": "Criminal Intimidation, Insult and Annoyance",
+    "keywords": [
+      "divine displeasure",
+      "inducement",
+      "superstition",
+      "coercion"
+    ],
+    "ai_summary": "IPC 508 on inducement through threat of Divine displeasure corresponds to BNS Section 354.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "198",
+    "ipc_code": "IPC-510",
+    "ipc_title": "Misconduct in public by a drunken person",
+    "bns_code": "BNS-355",
+    "bns_title": "Misconduct in public by a drunken person",
+    "description": "Misconduct in public by a drunken person is renumbered as BNS 355, with community service added as a punishment option.",
+    "chapter": "Criminal Intimidation, Insult and Annoyance",
+    "keywords": [
+      "drunken",
+      "misconduct",
+      "public",
+      "intoxication"
+    ],
+    "ai_summary": "IPC 510 on public misconduct by a drunken person maps to BNS Section 355.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
+  },
+  {
+    "id": "199",
+    "ipc_code": "IPC-511",
+    "ipc_title": "Punishment for attempting to commit offences punishable with imprisonment for life or other imprisonment",
+    "bns_code": "BNS-62",
+    "bns_title": "Punishment for attempting to commit offences punishable with imprisonment for life or other imprisonment",
+    "description": "The general provision punishing attempts to commit offences is moved from the end of the IPC to BNS Section 62 in the chapter on attempts.",
+    "chapter": "Attempts to Commit Offences",
+    "keywords": [
+      "attempt",
+      "punishment",
+      "inchoate offence",
+      "half sentence"
+    ],
+    "ai_summary": "IPC 511 on punishing attempts to commit offences corresponds to BNS Section 62.",
+    "validation_rules": [
+      "keyword_match",
+      "chapter_match"
+    ],
+    "created_at": "2026-07-04T15:00:00Z",
+    "updated_at": "2026-07-04T15:00:00Z"
   }
 ]
