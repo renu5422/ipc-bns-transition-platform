@@ -43,7 +43,7 @@ class TestChatRoute:
             assert field in data["sources"][0]
 
     def test_unknown_topic_returns_none_confidence(self, client):
-        data = client.post("/chat", json={"question": "spacecraft launch permits"}).json()
+        data = client.post("/chat", json={"question": "zxqv flurbo quantum warp"}).json()
         assert data["confidence"] == "none"
         assert data["sources"] == []
 

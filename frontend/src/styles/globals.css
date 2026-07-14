@@ -11,34 +11,93 @@
 }
 
 @layer base {
-  html {
-    @apply antialiased scroll-smooth;
-  }
-  body {
-    @apply bg-slate-50 text-slate-800;
-  }
-  ::selection {
-    @apply bg-amber-200 text-slate-900;
-  }
+  html { @apply antialiased scroll-smooth; }
+  body { @apply bg-slate-50 text-slate-800; }
+  ::selection { @apply bg-amber-200 text-slate-900; }
 }
 
 @layer components {
-  .card {
-    @apply bg-white border border-slate-200 rounded-xl shadow-sm;
+  /* Solid surfaces — all dense, data-heavy content.
+     Deliberately NOT glass: legibility beats effect on results/tables. */
+  .card { @apply bg-white border border-slate-200 rounded-xl shadow-sm; }
+  .badge { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold; }
+  .code-chip { @apply px-2.5 py-1 text-xs font-mono font-bold rounded-md; }
+
+  /* ── Glass surfaces ──────────────────────────────────────────────────
+     ONLY where something sits over a gradient or scrolling content, so the
+     blur has real depth to refract. Never over flat backgrounds; never on
+     dense results (it hurts readability). */
+
+  /* Sticky navbar — content scrolls beneath. The canonical correct use. */
+  .glass-nav {
+    @apply bg-slate-900/70 backdrop-blur-xl backdrop-saturate-150 border-b border-white/10;
   }
-  .badge {
-    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold;
+
+  /* Panel floating over the hero mesh. */
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-lg backdrop-saturate-150
+           border border-white/15 rounded-2xl;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   }
-  .code-chip {
-    @apply px-2.5 py-1 text-xs font-mono font-bold rounded-md;
+
+  /* Feature cards overlapping the hero gradient. */
+  .glass-card {
+    @apply bg-white/[0.07] backdrop-blur-xl backdrop-saturate-150
+           border border-white/10 rounded-2xl transition-all duration-300;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.28);
+  }
+  .glass-card:hover {
+    @apply bg-white/[0.12] border-amber-400/40 -translate-y-0.5;
+    box-shadow: 0 12px 40px rgba(245,158,11,0.15);
+  }
+
+  /* Small translucent status pill (live API health). */
+  .glass-pill {
+    @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full
+           bg-white/10 backdrop-blur-md border border-white/15 text-xs font-medium;
   }
 }
 
-/* Thin, unobtrusive scrollbars for chat panes */
-.scroll-thin::-webkit-scrollbar {
-  width: 6px;
+@layer utilities {
+  /* Hero gradient mesh — what the glass actually refracts.
+     Without a layered backdrop, glassmorphism is just flat grey. */
+  .hero-mesh {
+    background-color: #0f172a;
+    background-image:
+      radial-gradient(at 18% 22%, rgba(245,158,11,0.20) 0px, transparent 55%),
+      radial-gradient(at 82% 12%, rgba(56,189,248,0.14) 0px, transparent 50%),
+      radial-gradient(at 62% 88%, rgba(245,158,11,0.10) 0px, transparent 55%),
+      radial-gradient(at 8% 92%, rgba(99,102,241,0.12) 0px, transparent 50%);
+  }
+
+  /* Subtle grain so the large gradient doesn't band. */
+  .hero-grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
 }
-.scroll-thin::-webkit-scrollbar-thumb {
-  background: rgb(203 213 225);
-  border-radius: 3px;
+
+/* Graceful fallback where backdrop-filter is unsupported. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-nav { @apply bg-slate-900; }
+  .glass-panel, .glass-card { @apply bg-slate-800/95; }
+  .glass-pill { @apply bg-slate-800; }
+}
+
+/* Thin scrollbars for chat panes */
+.scroll-thin::-webkit-scrollbar { width: 6px; }
+.scroll-thin::-webkit-scrollbar-thumb { @apply bg-slate-300 rounded-full; }
+.scroll-thin::-webkit-scrollbar-track { @apply bg-transparent; }
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

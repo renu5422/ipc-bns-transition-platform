@@ -23,7 +23,7 @@ class TestAgentRoute:
         assert len(data["trace"]) >= 3
 
     def test_unknown_topic_returns_none_confidence(self, client):
-        data = client.post("/agent", json={"question": "spacecraft launch permits"}).json()
+        data = client.post("/agent", json={"question": "zxqv flurbo quantum warp"}).json()
         assert data["confidence"] == "none"
         assert data["sources"] == []
 
