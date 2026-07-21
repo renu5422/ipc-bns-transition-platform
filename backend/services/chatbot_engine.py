@@ -112,17 +112,17 @@ class DeterministicLegalLLM(LLM):
 
 
 def resolve_default_llm() -> Any:
-    """Pick the best available LLM: OpenAI > Anthropic > deterministic."""
-    if os.getenv("OPENAI_API_KEY"):
-        try:
-            from langchain_openai import ChatOpenAI
-            return ChatOpenAI(model=os.getenv("CHATBOT_MODEL", "gpt-4o-mini"), temperature=0)
-        except ImportError:
-            pass
+    """Pick the best available LLM: Anthropic > OpenAI > deterministic."""
     if os.getenv("ANTHROPIC_API_KEY"):
         try:
             from langchain_anthropic import ChatAnthropic
             return ChatAnthropic(model=os.getenv("CHATBOT_MODEL", "claude-haiku-4-5"), temperature=0)
+        except ImportError:
+            pass
+    if os.getenv("OPENAI_API_KEY"):
+        try:
+            from langchain_openai import ChatOpenAI
+            return ChatOpenAI(model=os.getenv("CHATBOT_MODEL", "gpt-4o-mini"), temperature=0)
         except ImportError:
             pass
     return DeterministicLegalLLM()
