@@ -7,11 +7,13 @@ Routes:
 """
 
 from fastapi import APIRouter, Depends, HTTPException
+
+from backend.api.auth import get_current_user
 from pydantic import BaseModel, Field
 
 from backend.services.chatbot_engine import ChatbotEngine
 
-router = APIRouter(prefix="/chat", tags=["chatbot"])
+router = APIRouter(prefix="/chat", tags=["chatbot"], dependencies=[Depends(get_current_user)])
 
 _engine: ChatbotEngine | None = None
 

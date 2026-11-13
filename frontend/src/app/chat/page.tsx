@@ -76,12 +76,19 @@ export default function ChatPage() {
           { role: 'assistant', text: r.answer, sources: r.sources, confidence: r.confidence },
         ]);
       }
-    } catch {
+    } catch (err: unknown) {
+      const status =
+        err && typeof err === 'object' && 'response' in err
+          ? (err as { response?: { status?: number } }).response?.status
+          : undefined;
       setMessages((m) => [
         ...m,
         {
           role: 'assistant',
-          text: 'Could not reach the API. Is the backend running on port 8000?',
+          text:
+            status === 401
+              ? 'Please sign in to use the AI assistant (Sign in, top right). Your session may have expired.'
+              : 'Could not reach the API. Is the backend running on port 8000?',
           error: true,
         },
       ]);

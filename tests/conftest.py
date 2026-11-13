@@ -79,3 +79,15 @@ def empty_lists_file(tmp_path: Path) -> Path:
     f = tmp_path / "empty.json"
     f.write_text(json.dumps([record]), encoding="utf-8")
     return f
+
+
+# ── Auth fixtures ──────────────────────────────────────────────────────────
+
+@pytest.fixture(scope="session")
+def auth_headers(client) -> dict:
+    """Bearer-token headers for the demo analyst account."""
+    resp = client.post(
+        "/login", json={"username": "analyst", "password": "nyayasetu2026"}
+    )
+    assert resp.status_code == 200, "login failed in auth fixture"
+    return {"Authorization": f"Bearer {resp.json()['access_token']}"}

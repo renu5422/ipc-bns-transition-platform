@@ -1,7 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+
+from backend.api.auth import get_current_user
 from backend.services.diagnostics_service import diagnostics_service
 
-router = APIRouter(prefix="/admin")
+router = APIRouter(prefix="/admin", dependencies=[Depends(get_current_user)])
 
 
 @router.get("/diagnostics")

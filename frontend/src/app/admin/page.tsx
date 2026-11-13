@@ -24,6 +24,9 @@ export default function AdminPage() {
       if (d.status === 'fulfilled') setDiag(d.value as Diagnostics);
       if (h.status === 'rejected' && d.status === 'rejected') {
         setError('Cannot reach the backend. Is it running on port 8000?');
+      } else if (d.status === 'rejected') {
+        const st = (d.reason as { response?: { status?: number } })?.response?.status;
+        if (st === 401) setError('Admin diagnostics require sign-in — use the Sign in button in the navbar.');
       }
     });
   }, []);

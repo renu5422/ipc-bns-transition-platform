@@ -16,6 +16,8 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException
+
+from backend.api.auth import get_current_user
 from pydantic import BaseModel, Field
 
 from backend.ml.ranking_model import MLRankingModel
@@ -23,7 +25,7 @@ from backend.ml.ranking_model import MLRankingModel
 REPO_ROOT: Path = Path(__file__).resolve().parents[2]
 DATA_PATH: Path = REPO_ROOT / "data" / "ipc_bns_mapping.json"
 
-router = APIRouter(prefix="/rank", tags=["ml"])
+router = APIRouter(prefix="/rank", tags=["ml"], dependencies=[Depends(get_current_user)])
 
 _ranker: MLRankingModel | None = None
 

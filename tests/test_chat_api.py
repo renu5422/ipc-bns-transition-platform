@@ -1,6 +1,8 @@
 # TARGET PATH IN REPO: tests/test_chat_api.py
 """Contract tests for the Chat API — POST /chat, POST /chat/summary."""
 
+
+import pytest
 from typing import Any
 
 from fastapi.testclient import TestClient
@@ -9,6 +11,14 @@ from langchain_core.language_models.llms import LLM
 from backend.api.chat import get_engine
 from backend.main import app
 from backend.services.chatbot_engine import ChatbotEngine
+
+
+@pytest.fixture(autouse=True)
+def _authenticated_client(client, auth_headers):
+    """These endpoints require a JWT — attach it for every test here."""
+    client.headers.update(auth_headers)
+    yield
+    client.headers.pop("Authorization", None)
 
 
 class MockLLM(LLM):
@@ -59,13 +69,13 @@ class TestChatRoute:
         resp = client.post("/chat", json={})
         assert resp.status_code == 422
 
-    def test_engine_is_overridable_with_mock_llm(self, tmp_service):
+    def test_engine_is_overridable_with_mock_llm(self, tmp_service, auth_headers):
         app.dependency_overrides[get_engine] = lambda: ChatbotEngine(
             llm=MockLLM(), mapping_service=tmp_service
         )
         try:
             with TestClient(app) as mock_client:
-                data = mock_client.post("/chat", json={"question": "murder"}).json()
+                data = mock_client.post("/chat", json={"question": "murder"}, headers=auth_headers).json()
             assert data["answer"] == "MOCKED ANSWER"
             assert data["model"] == "mock"
         finally:
@@ -101,3 +111,10 @@ class TestHealthVersionBump:
         data = client.get("/health").json()
         assert data["status"] == "ok"
         assert data["version"] == app.version  # stays valid across bumps
+
+
+class TestAuthRequired:
+    def test_requires_token(self, client):
+        client.headers.pop("Authorization", None)
+        resp = client.post("/chat", json={"question": "x"})
+        assert resp.status_code == 401

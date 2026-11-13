@@ -6,11 +6,13 @@ Route:
 """
 
 from fastapi import APIRouter, Depends, HTTPException
+
+from backend.api.auth import get_current_user
 from pydantic import BaseModel, Field
 
 from backend.services.agent_graph import LegalTransitionAgent
 
-router = APIRouter(prefix="/agent", tags=["agent"])
+router = APIRouter(prefix="/agent", tags=["agent"], dependencies=[Depends(get_current_user)])
 
 _agent: LegalTransitionAgent | None = None
 

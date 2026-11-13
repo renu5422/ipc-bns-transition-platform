@@ -2,6 +2,16 @@
 """Contract tests for the Agent API — POST /agent."""
 
 
+import pytest
+
+@pytest.fixture(autouse=True)
+def _authenticated_client(client, auth_headers):
+    """These endpoints require a JWT — attach it for every test here."""
+    client.headers.update(auth_headers)
+    yield
+    client.headers.pop("Authorization", None)
+
+
 class TestAgentRoute:
     def test_known_reference_returns_200(self, client):
         resp = client.post("/agent", json={"question": "what replaced IPC-302?"})
@@ -38,3 +48,10 @@ class TestAgentRoute:
     def test_missing_question_returns_422(self, client):
         resp = client.post("/agent", json={})
         assert resp.status_code == 422
+
+
+class TestAuthRequired:
+    def test_requires_token(self, client):
+        client.headers.pop("Authorization", None)
+        resp = client.post("/agent", json={"question": "x"})
+        assert resp.status_code == 401

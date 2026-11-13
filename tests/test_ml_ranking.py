@@ -88,10 +88,11 @@ def fitted_model(records: list[dict[str, Any]]) -> MLRankingModel:
 
 
 @pytest.fixture()
-def api_client(fitted_model: MLRankingModel) -> Iterator[TestClient]:
+def api_client(fitted_model: MLRankingModel, auth_headers: dict) -> Iterator[TestClient]:
     """TestClient on the real app with the ranker dependency overridden."""
     app.dependency_overrides[get_ranker] = lambda: fitted_model
     with TestClient(app) as client:
+        client.headers.update(auth_headers)
         yield client
     app.dependency_overrides.pop(get_ranker, None)
 
@@ -99,6 +100,14 @@ def api_client(fitted_model: MLRankingModel) -> Iterator[TestClient]:
 # ----------------------------------------------------------------------
 # Corpus construction (pandas)
 # ----------------------------------------------------------------------
+
+
+@pytest.fixture(autouse=True)
+def _authenticated_client(client, auth_headers):
+    """These endpoints require a JWT — attach it for every test here."""
+    client.headers.update(auth_headers)
+    yield
+    client.headers.pop("Authorization", None)
 
 
 def test_build_corpus_df_shape_and_columns(records: list[dict[str, Any]]) -> None:
@@ -278,3 +287,10 @@ def test_api_rank_gibberish_returns_empty_results(api_client: TestClient) -> Non
     response = api_client.post("/rank", json={"query": "zzqx wvvqx"})
     assert response.status_code == 200
     assert response.json()["results"] == []
+
+
+class TestAuthRequired:
+    def test_requires_token(self, client):
+        client.headers.pop("Authorization", None)
+        resp = client.post("/rank", json={"query": "x"})
+        assert resp.status_code == 401

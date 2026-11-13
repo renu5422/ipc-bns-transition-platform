@@ -49,14 +49,14 @@ def get_current_user(
 ) -> str:
     """Dependency: validates the Bearer token, returns the username."""
     if credentials is None:
-        raise HTTPException(status_code=401, detail="Not authenticated")
+        raise HTTPException(status_code=401, detail="Not authenticated", headers={"WWW-Authenticate": "Bearer"})
     try:
         payload = jwt.decode(credentials.credentials, _SECRET, algorithms=[_ALGORITHM])
     except JWTError as exc:
-        raise HTTPException(status_code=401, detail="Invalid or expired token") from exc
+        raise HTTPException(status_code=401, detail="Invalid or expired token", headers={"WWW-Authenticate": "Bearer"}) from exc
     username = payload.get("sub")
     if not username:
-        raise HTTPException(status_code=401, detail="Invalid token payload")
+        raise HTTPException(status_code=401, detail="Invalid token payload", headers={"WWW-Authenticate": "Bearer"})
     return username
 
 

@@ -29,13 +29,13 @@ print(f"\n3. VERIFICATION     -> {s} | contradictions: {r['count']} | clean: {no
 s, r = call("GET", "/mapping/impact?section_id=IPC-420")
 print(f"   impact analysis  -> {s} | total records: {r['total_records']} | chapters: {len(r['unique_chapters'])}")
 
-s, r = call("POST", "/chat", {"question": "what replaced IPC-420 cheating?"})
+s, r = call("POST", "/chat", {"question": "what replaced IPC-420 cheating?"}, token=token)
 print(f"\n4. RESULT (chat)    -> {s} | confidence: {r['confidence']} | cites: {[x['bns_code'] for x in r['sources']]}")
-s, r = call("POST", "/agent", {"question": "verify the transition of IPC-326A acid attack"})
+s, r = call("POST", "/agent", {"question": "verify the transition of IPC-326A acid attack"}, token=token)
 print(f"   agent w/ trace   -> {s} | confidence: {r['confidence']} | refs: {r['references']} | trace: {len(r['trace'])} steps")
-s, r = call("POST", "/chat/summary", {"code": "IPC-304A"})
+s, r = call("POST", "/chat/summary", {"code": "IPC-304A"}, token=token)
 print(f"   AI summary       -> {s} | {r['summary'][:90]}")
-s, r = call("POST", "/rank", {"query": "acid attack on woman", "top_k": 3})
+s, r = call("POST", "/rank", {"query": "acid attack on woman", "top_k": 3}, token=token)
 print(f"   ML ranking       -> {s} | top: {[(x['ipc_code'], x['ml_score']) for x in r['results']]}")
 
 s, r = call("GET", "/health")

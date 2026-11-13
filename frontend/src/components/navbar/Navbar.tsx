@@ -2,9 +2,12 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import clsx from 'clsx';
-import { Scale, Search, MessageSquare, LayoutDashboard, Shield } from 'lucide-react';
+import { Scale, Search, MessageSquare, LayoutDashboard, Shield, LogIn, LogOut } from 'lucide-react';
+
+import { useAuth } from '@/hooks/useAuth';
+import { logout } from '@/services/api';
 
 const NAV_LINKS = [
   { href: '/search', label: 'Search', icon: Search },
@@ -14,6 +17,13 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
+  const { isAuthenticated } = useAuth();
+
+  function handleSignOut() {
+    logout();
+    router.push('/');
+  }
 
   return (
     /* Glass: content scrolls beneath this bar, so the blur has real depth.
@@ -67,6 +77,24 @@ export default function Navbar() {
             <Shield className="w-3.5 h-3.5" aria-hidden="true" />
             <span className="hidden sm:inline">Admin</span>
           </Link>
+
+          {isAuthenticated ? (
+            <button
+              onClick={handleSignOut}
+              className="ml-1.5 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-white/10 transition-all"
+            >
+              <LogOut className="w-3.5 h-3.5" aria-hidden="true" />
+              <span className="hidden sm:inline">Sign out</span>
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              className="ml-1.5 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-amber-400 hover:text-amber-300 hover:bg-white/10 transition-all"
+            >
+              <LogIn className="w-3.5 h-3.5" aria-hidden="true" />
+              <span className="hidden sm:inline">Sign in</span>
+            </Link>
+          )}
         </div>
       </div>
     </nav>

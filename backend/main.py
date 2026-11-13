@@ -21,7 +21,7 @@ logger = logging.getLogger("ipc_bns")
 
 app = FastAPI(
     title="IPC-BNS Transition Platform API",
-    version="1.4.0",
+    version="1.5.0",
     description="AI-assisted legal migration platform for IPC-BNS cross-referencing.",
 )
 

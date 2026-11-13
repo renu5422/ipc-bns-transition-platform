@@ -2,31 +2,34 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Navbar from '@/components/navbar/Navbar';
-import { apiClient } from '@/services/api';
+import { login } from '@/services/api';
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
+  const router = useRouter();
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setLoading(true);
     setNotice(null);
     try {
-      await apiClient.post('/login', { username, password });
-      setNotice('Signed in.');
+      await login(username, password);
+      setNotice('Signed in — redirecting…');
+      router.push('/');
     } catch (err: unknown) {
       const status =
         err && typeof err === 'object' && 'response' in err
           ? (err as { response?: { status?: number } }).response?.status
           : undefined;
       setNotice(
-        status === 501
-          ? 'Authentication is not enabled yet on this deployment — JWT sign-in ships with the security milestone.'
-          : 'Sign-in failed. Check your credentials and that the backend is running.'
+        status === 401
+          ? 'Invalid username or password.'
+          : 'Sign-in failed. Is the backend running on port 8000?'
       );
     } finally {
       setLoading(false);

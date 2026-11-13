@@ -62,9 +62,11 @@ Every agent run returns a step-by-step `trace` (one entry per graph node: extrac
 
 FastAPI application (`backend/main.py`, version **1.4.0**) with request logging middleware and a global exception handler.
 
-`POST /login` · `GET /me` · `POST /logout` · `GET /health` · `GET /search` · `GET /mapping` · `GET /mapping/contradiction` · `GET /mapping/impact` · `POST /chat` · `POST /chat/summary` · `POST /agent` · `POST /rank` · `GET /admin/diagnostics`
+Public: `POST /login` · `POST /logout` · `GET /health` · `GET /search` · `GET /mapping` · `GET /mapping/contradiction` · `GET /mapping/impact`
 
-JWT bearer auth protects the chat, agent, and ranking endpoints. Demo analyst account (configurable via `AUTH_USERNAME` / `AUTH_PASSWORD`):
+Auth required 🔒 (`Authorization: Bearer <token>` from `POST /login`): `GET /me` · `POST /chat` · `POST /chat/summary` · `POST /agent` · `POST /rank` · `GET /admin/*`
+
+JWT bearer auth protects the chat, agent, ranking and admin endpoints. Set `AUTH_SECRET_KEY` in production (the dev default is forgeable); the frontend keeps the JWT in `localStorage`, which is demo-grade — prefer httpOnly cookies for production. Demo analyst account (configurable via `AUTH_USERNAME` / `AUTH_PASSWORD`):
 
 ```
 username: analyst

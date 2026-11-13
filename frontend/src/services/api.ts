@@ -10,6 +10,62 @@ export const apiClient = axios.create({
   timeout: 15000,
 });
 
+// ── Auth token handling ──────────────────────────────────────────────────
+// Demo-grade storage: the JWT lives in localStorage (readable by any XSS).
+// Acceptable for this research platform; use httpOnly cookies in production.
+
+const TOKEN_KEY = 'nyayasetu_token';
+
+export function getToken(): string | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    return window.localStorage.getItem(TOKEN_KEY);
+  } catch {
+    return null;
+  }
+}
+
+export function setToken(token: string): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.setItem(TOKEN_KEY, token);
+    window.dispatchEvent(new Event('auth-changed'));
+  } catch {
+    /* storage unavailable — stay logged out */
+  }
+}
+
+export function clearToken(): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.removeItem(TOKEN_KEY);
+    window.dispatchEvent(new Event('auth-changed'));
+  } catch {
+    /* ignore */
+  }
+}
+
+export function isLoggedIn(): boolean {
+  return getToken() !== null;
+}
+
+apiClient.interceptors.request.use((config) => {
+  const token = getToken();
+  if (token) config.headers.Authorization = `Bearer ${token}`;
+  return config;
+});
+
+apiClient.interceptors.response.use(
+  (res) => res,
+  (error) => {
+    const status = error?.response?.status;
+    const url: string = error?.config?.url ?? '';
+    // A 401 from /login just means wrong credentials — keep any stored token.
+    if (status === 401 && !url.includes('/login')) clearToken();
+    return Promise.reject(error);
+  }
+);
+
 // ── Response types ───────────────────────────────────────────────────────
 
 export interface SearchResult {
@@ -152,4 +208,21 @@ export async function askAgent(question: string): Promise<AgentResponse> {
 export async function getSummary(code: string): Promise<SummaryResponse> {
   const { data } = await apiClient.post<SummaryResponse>('/chat/summary', { code });
   return data;
+}
+
+
+export interface LoginResponse {
+  access_token: string;
+  token_type: string;
+  expires_in: number;
+}
+
+export async function login(username: string, password: string): Promise<LoginResponse> {
+  const { data } = await apiClient.post<LoginResponse>('/login', { username, password });
+  setToken(data.access_token);
+  return data;
+}
+
+export function logout(): void {
+  clearToken();
 }
