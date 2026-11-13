@@ -1,4 +1,3 @@
-// TARGET PATH IN REPO: frontend/src/components/navbar/Navbar.tsx
 'use client';
 
 import Link from 'next/link';

@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/services/db_mapping_service.py
 """Database-backed variant of :class:`MappingService`.
 
 Design: :class:`DBMappingService` subclasses ``MappingService`` and replaces

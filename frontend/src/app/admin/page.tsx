@@ -1,4 +1,3 @@
-// TARGET PATH IN REPO: frontend/src/app/admin/page.tsx  (replaces stub)
 'use client';
 
 import { useEffect, useState } from 'react';

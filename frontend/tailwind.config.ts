@@ -1,4 +1,3 @@
-// TARGET PATH IN REPO: frontend/tailwind.config.ts
 import type { Config } from 'tailwindcss';
 
 const config: Config = {

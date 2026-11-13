@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: tests/test_agent_api.py
 """Contract tests for the Agent API — POST /agent."""
 
 

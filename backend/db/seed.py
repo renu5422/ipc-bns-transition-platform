@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/db/seed.py
 """Seed the section_mappings table from the canonical JSON mapping file.
 
 Idempotent: records are upserted by primary key (``id``) via

@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: tests/test_chat_api.py
 """Contract tests for the Chat API — POST /chat, POST /chat/summary."""
 
 

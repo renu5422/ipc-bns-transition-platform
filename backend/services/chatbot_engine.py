@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/services/chatbot_engine.py
 """LangChain-powered chatbot engine for the IPC-BNS platform (Week 6).
 
 Architecture (retrieval-grounded, per README "Future Chatbot Layer"):

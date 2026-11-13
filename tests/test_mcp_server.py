@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: tests/test_mcp_server.py
 """Tests for the Week 8 MCP server (backend/mcp_server/server.py).
 
 These tests call the tool implementation functions directly -- no stdio

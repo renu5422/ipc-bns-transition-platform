@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/api/chat.py
 """Chat API — conversational access to the validated mapping pipeline.
 
 Routes:

@@ -1,4 +1,3 @@
-// TARGET PATH IN REPO: frontend/src/app/page.tsx
 'use client';
 
 import Link from 'next/link';

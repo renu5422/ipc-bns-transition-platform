@@ -1,4 +1,3 @@
-<!-- TARGET PATH IN REPO: backend/mcp_server/README.md -->
 # IPC-BNS MCP Server
 
 Exposes the IPC → BNS transition platform as a **Model Context Protocol (MCP)** server, so any MCP-capable client (Claude Desktop, Claude Code, custom agents) can call the platform's search, mapping, contradiction-detection, summarization, and agentic Q&A capabilities as tools.

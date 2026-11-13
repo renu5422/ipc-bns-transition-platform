@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/services/prompts.py
 """Prompt templates for the IPC-BNS chatbot engine (Week 6).
 
 All prompts are LangChain ``PromptTemplate`` objects so they can be piped

@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/db/database.py
 """Database engine and session management for the IPC-BNS transition platform.
 
 SQLAlchemy 2.0-style setup. The database URL is taken from the ``DATABASE_URL``

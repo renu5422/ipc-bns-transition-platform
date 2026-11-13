@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/api/ml.py
 """FastAPI router exposing the ML (TF-IDF cosine) ranking endpoint.
 
 The ranker is a lazy in-process singleton: on the first request the model

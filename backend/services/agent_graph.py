@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/services/agent_graph.py
 """LangGraph multi-step legal transition agent (Week 7).
 
 Implements the README workflow pipeline as an explicit state graph:

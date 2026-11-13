@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: tests/test_db_layer.py
 """Week 3 tests: SQLAlchemy models, seeding, and the DB-backed mapping service.
 
 All tests run against in-memory SQLite (or a tmp_path JSON file for seeding)

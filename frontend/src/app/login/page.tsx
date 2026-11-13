@@ -1,4 +1,3 @@
-// TARGET PATH IN REPO: frontend/src/app/login/page.tsx  (replaces stub)
 'use client';
 
 import { FormEvent, useState } from 'react';

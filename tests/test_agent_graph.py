@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: tests/test_agent_graph.py
 """Unit tests for the LangGraph LegalTransitionAgent (Week 7)."""
 
 import pytest

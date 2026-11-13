@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/ml/ranking_model.py
 """TF-IDF + cosine-similarity ranking model for IPC -> BNS mapping records.
 
 Week 9: scikit-learn ML ranking layer that complements the deterministic

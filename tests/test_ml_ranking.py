@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: tests/test_ml_ranking.py
 """Tests for the Week 9 TF-IDF ranking model and its API router.
 
 Self-contained and deterministic: models are fitted on an inline

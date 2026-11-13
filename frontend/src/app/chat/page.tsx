@@ -1,4 +1,3 @@
-// TARGET PATH IN REPO: frontend/src/app/chat/page.tsx  (new)
 'use client';
 
 import { FormEvent, useEffect, useRef, useState } from 'react';

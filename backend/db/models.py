@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/db/models.py
 """ORM models for the IPC-BNS transition platform.
 
 :class:`SectionMappingORM` mirrors one record of ``data/ipc_bns_mapping.json``

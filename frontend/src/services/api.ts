@@ -1,4 +1,3 @@
-// TARGET PATH IN REPO: frontend/src/services/api.ts  (replaces existing file)
 import axios from 'axios';
 import { SectionMapping } from '@/types/section';
 

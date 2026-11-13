@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: tests/test_chatbot_engine.py
 """Unit tests for the LangChain ChatbotEngine (Week 6)."""
 
 from typing import Any

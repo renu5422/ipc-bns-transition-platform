@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/api/agent.py
 """Agent API — multi-step LangGraph pipeline with audit trace.
 
 Route:

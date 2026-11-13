@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/ml/train.py
 """Training entrypoint for the IPC -> BNS TF-IDF ranking model.
 
 Loads ``data/ipc_bns_mapping.json``, auto-generates a labelled evaluation

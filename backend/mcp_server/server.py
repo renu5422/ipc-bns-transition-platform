@@ -1,4 +1,3 @@
-# TARGET PATH IN REPO: backend/mcp_server/server.py
 """MCP server exposing the IPC->BNS transition platform as Model Context Protocol tools.
 
 Week 8 deliverable: wraps the existing service layer (MappingService,
