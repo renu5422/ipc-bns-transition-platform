@@ -10,9 +10,11 @@ services:
     environment:
       - LOG_LEVEL=INFO
       - CORS_ORIGINS=http://localhost:3000
+      # Production mode: the backend refuses to start with a weak/default secret.
+      - APP_ENV=production
       # Auth — values come from .env (copy .env.example). Fails fast if the
       # JWT signing key is missing so we never run with the dev default.
-      - AUTH_SECRET_KEY=${AUTH_SECRET_KEY:?set AUTH_SECRET_KEY in .env (see .env.example)}
+      - AUTH_SECRET_KEY=${AUTH_SECRET_KEY:?set AUTH_SECRET_KEY in .env - generate one with python -c 'import secrets; print(secrets.token_urlsafe(48))'}
       - AUTH_USERNAME=${AUTH_USERNAME:-analyst}
       - AUTH_PASSWORD=${AUTH_PASSWORD:-nyayasetu2026}
       - AUTH_TOKEN_TTL_MINUTES=${AUTH_TOKEN_TTL_MINUTES:-60}
