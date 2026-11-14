@@ -39,8 +39,8 @@ class TestAgentRun:
 
     def test_full_pipeline_trace_has_four_steps(self, agent):
         result = agent.run("IPC-302")
-        assert len(result["trace"]) == 4
-        for step in ("extract", "retrieve", "validate", "compose"):
+        assert len(result["trace"]) == 5
+        for step in ("extract", "retrieve", "validate", "compose", "grounding_check"):
             assert any(t.startswith(step) for t in result["trace"])
 
     def test_exact_reference_high_confidence(self, agent):

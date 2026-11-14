@@ -21,6 +21,13 @@ from typing import Any
 from langchain_core.language_models.llms import LLM
 from langchain_core.output_parsers import StrOutputParser
 
+from backend.services.grounding import (  # extract_references is re-exported for callers
+    REFUSAL_MESSAGE,
+    cap_confidence,
+    check_grounding,
+    extract_references,
+    warning_for,
+)
 from backend.services.mapping_service import MappingService
 from backend.services.prompts import (
     CHAT_PROMPT,
@@ -32,19 +39,6 @@ from backend.services.prompts import (
 
 _PAIR_RE = re.compile(r"^\[([A-Za-z0-9()\-]+) -> ([A-Za-z0-9()\-]+)\] (.+)$", re.MULTILINE)
 _NO_CONTEXT = "(no matching mapping records found)"
-
-# Matches IPC-302, IPC 302, ipc302, BNS-101, bns_101 ...
-_CODE_RE = re.compile(r"\b(IPC|BNS)[\s\-_]?(\d{1,4}[A-Za-z]?)\b", re.IGNORECASE)
-
-
-def extract_references(text: str) -> list[str]:
-    """Detect and normalise IPC/BNS section references in free text."""
-    seen: list[str] = []
-    for prefix, num in _CODE_RE.findall(text or ""):
-        code = f"{prefix.upper()}-{num.upper()}"
-        if code not in seen:
-            seen.append(code)
-    return seen
 
 
 def _extract_context(prompt: str) -> str:
@@ -79,11 +73,7 @@ class DeterministicLegalLLM(LLM):
         pairs = _PAIR_RE.findall(context)
 
         if not pairs or _NO_CONTEXT in context:
-            return (
-                "I cannot find a validated IPC-BNS mapping for this query in "
-                "the current dataset. Please refine your query with a section "
-                "code (e.g. IPC-302) or offence keywords."
-            )
+            return REFUSAL_MESSAGE
 
         if "legal summarisation engine" in prompt:
             return self._summarise(context, pairs[0])
@@ -185,6 +175,15 @@ class ChatbotEngine:
         answer = self._chat_chain.invoke(
             {"context": format_context(records), "question": question}
         )
+        confidence = _confidence(hits[0]["score"] if hits else 0.0)
+
+        # Grounding guard: flag (do not refuse) answers citing codes absent
+        # from the retrieved records — cap confidence and warn inline so the
+        # analyst sees it even in UIs that ignore the new fields.
+        grounding = check_grounding(answer, records, question)
+        if not grounding["grounded"]:
+            confidence = cap_confidence(confidence)
+            answer += "\n\n" + warning_for(grounding["ungrounded_codes"])
         return {
             "answer": answer,
             "sources": [
@@ -196,8 +195,10 @@ class ChatbotEngine:
                 }
                 for h in hits
             ],
-            "confidence": _confidence(hits[0]["score"] if hits else 0.0),
+            "confidence": confidence,
             "model": self.model_name,
+            "grounded": grounding["grounded"],
+            "ungrounded_codes": grounding["ungrounded_codes"],
         }
 
     def summarize(self, section_code: str) -> dict[str, Any]:
