@@ -52,7 +52,10 @@ class DiagnosticsService:
 
         return {
             "retrieval_workflow": {"status": "ok" if retrieval_ok else "error"},
-            "search_ranking": {"status": "ok" if ranking_det else "error", "deterministic": ranking_det},
+            "search_ranking": {
+                "status": "ok" if ranking_det else "error",
+                "deterministic": ranking_det,
+            },
             "contradiction_detection": {"status": "ok" if contradiction_ok else "error"},
             "impact_analysis": {"status": "ok" if impact_ok else "error"},
             "chatbot_workflow": {

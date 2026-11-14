@@ -68,7 +68,13 @@ class DeterministicLegalLLM(LLM):
     def _llm_type(self) -> str:
         return "deterministic-legal"
 
-    def _call(self, prompt: str, stop: list[str] | None = None, run_manager: Any = None, **kwargs: Any) -> str:
+    def _call(
+        self,
+        prompt: str,
+        stop: list[str] | None = None,
+        run_manager: Any = None,
+        **kwargs: Any,
+    ) -> str:
         context = _extract_context(prompt)
         pairs = _PAIR_RE.findall(context)
 
@@ -115,7 +121,9 @@ def resolve_default_llm() -> Any:
     if os.getenv("ANTHROPIC_API_KEY"):
         try:
             from langchain_anthropic import ChatAnthropic
-            return ChatAnthropic(model=os.getenv("CHATBOT_MODEL", "claude-haiku-4-5"), temperature=0)
+            return ChatAnthropic(
+                model=os.getenv("CHATBOT_MODEL", "claude-haiku-4-5"), temperature=0
+            )
         except ImportError:
             pass
     if os.getenv("OPENAI_API_KEY"):

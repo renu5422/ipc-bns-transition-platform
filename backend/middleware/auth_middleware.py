@@ -3,6 +3,7 @@ from starlette.middleware.base import BaseHTTPMiddleware
 
 PROTECTED_PREFIXES = ["/admin"]
 
+
 class AuthMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         if any(request.url.path.startswith(p) for p in PROTECTED_PREFIXES):

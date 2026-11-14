@@ -23,6 +23,7 @@ from backend.services.chatbot_engine import (
 from backend.services.mapping_service import MappingService
 from backend.services.prompts import CHAT_PROMPT, format_context
 
+
 class AgentState(TypedDict, total=False):
     question: str
     references: list[str]          # normalised section codes found in the text

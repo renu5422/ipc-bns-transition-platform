@@ -112,7 +112,10 @@ def plot_accuracy_by_query_type(
 
     fig, ax = plt.subplots(figsize=(7.0, 4.5))
     positions = range(len(labels))
-    bars = ax.bar(positions, accuracies, width=0.5, color=["#3b6ea5", "#5a9e6f"], edgecolor="#222222")
+    bars = ax.bar(
+        positions, accuracies, width=0.5,
+        color=["#3b6ea5", "#5a9e6f"], edgecolor="#222222",
+    )
     for bar, accuracy, mrr in zip(bars, accuracies, mrrs):
         ax.annotate(
             f"acc={accuracy:.3f}\nmrr={mrr:.3f}",

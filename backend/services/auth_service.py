@@ -1,6 +1,7 @@
 import hashlib
 import os
 
+
 class AuthService:
     def verify_password(self, plain: str, hashed: str) -> bool:
         # Use a proper password hashing library (e.g., bcrypt) in production
@@ -11,5 +12,6 @@ class AuthService:
         salt = os.urandom(16).hex()
         hashed = hashlib.sha256((salt + plain).encode()).hexdigest()
         return f"{salt}:{hashed}"
+
 
 auth_service = AuthService()
