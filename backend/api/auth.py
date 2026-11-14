@@ -3,10 +3,14 @@
 Demo deployment ships one analyst account, configurable via env:
   AUTH_USERNAME (default "analyst")
   AUTH_PASSWORD (default "nyayasetu2026")
-  AUTH_SECRET_KEY (default is dev-only; set a real secret in production)
+  AUTH_SECRET_KEY (dev-only fallback; REQUIRED when APP_ENV=production)
+  APP_ENV         ("development" by default; "production" enables the hard
+                   secret check in resolve_secret)
 """
 
+import logging
 import os
+from collections.abc import Mapping
 from datetime import datetime, timedelta, timezone
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -16,9 +20,54 @@ from passlib.context import CryptContext
 from pydantic import BaseModel, Field
 
 router = APIRouter(tags=["auth"])
+logger = logging.getLogger("ipc_bns.auth")
 
 _ALGORITHM = "HS256"
-_SECRET = os.getenv("AUTH_SECRET_KEY", "dev-secret-change-in-production")
+DEV_SECRET = "dev-secret-change-in-production"
+MIN_SECRET_LENGTH = 32
+_GENERATE_HINT = (
+    'generate one with: python -c "import secrets; '
+    'print(secrets.token_urlsafe(48))"'
+)
+
+
+class InsecureSecretError(RuntimeError):
+    """Raised at import time when production runs without a strong JWT secret."""
+
+
+def resolve_secret(env: Mapping[str, str]) -> str:
+    """Return the JWT signing secret for the given environment mapping.
+
+    APP_ENV=production: AUTH_SECRET_KEY must be set, not a placeholder/dev value,
+    and at least MIN_SECRET_LENGTH chars — otherwise InsecureSecretError.
+    Any other APP_ENV: falls back to DEV_SECRET with a warning.
+    """
+    app_env = (env.get("APP_ENV") or "development").strip().lower()
+    secret = (env.get("AUTH_SECRET_KEY") or "").strip()
+    if app_env == "production":
+        if not secret:
+            problem = "is not set"
+        elif secret == DEV_SECRET or "change-me" in secret.lower():
+            problem = "is the dev default / a placeholder"
+        elif len(secret) < MIN_SECRET_LENGTH:
+            problem = f"is shorter than {MIN_SECRET_LENGTH} characters"
+        else:
+            return secret
+        raise InsecureSecretError(
+            f"APP_ENV=production but AUTH_SECRET_KEY {problem}. "
+            f"Set a strong AUTH_SECRET_KEY ({_GENERATE_HINT})."
+        )
+    if not secret:
+        logger.warning(
+            "AUTH_SECRET_KEY not set — using the insecure dev secret (APP_ENV=%s). "
+            "Never do this in production; %s",
+            app_env, _GENERATE_HINT,
+        )
+        return DEV_SECRET
+    return secret
+
+
+_SECRET = resolve_secret(os.environ)
 _TOKEN_TTL_MINUTES = int(os.getenv("AUTH_TOKEN_TTL_MINUTES", "60"))
 
 _pwd = CryptContext(schemes=["bcrypt"], deprecated="auto")
