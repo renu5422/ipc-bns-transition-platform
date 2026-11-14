@@ -57,3 +57,85 @@ jobs:
           name: coverage-report
           path: .coverage
           include-hidden-files: true
+
+  e2e:
+    name: E2E (Playwright)
+    runs-on: ubuntu-latest
+    needs: test
+    timeout-minutes: 20
+    env:
+      # Test-only analyst account shared by the backend and the signed-in E2E tests.
+      AUTH_USERNAME: e2e-analyst
+      AUTH_PASSWORD: e2e-ci-password
+      AUTH_SECRET_KEY: e2e-ci-secret-not-for-production
+      CORS_ORIGINS: http://localhost:3000
+      # NEXT_PUBLIC_* is inlined into the client bundle at build time.
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+      E2E_BASE_URL: http://localhost:3000
+      E2E_API_URL: http://localhost:8000
+      E2E_REQUIRED: "1"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          # No package-lock.json is committed, so key the npm cache on package.json.
+          cache: npm
+          cache-dependency-path: frontend/package.json
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r backend/requirements.txt
+          pip install pytest playwright pytest-playwright
+
+      - name: Install Playwright browser
+        run: python -m playwright install --with-deps chromium
+
+      - name: Start backend
+        run: |
+          mkdir -p logs
+          nohup uvicorn backend.main:app --host 127.0.0.1 --port 8000 > logs/backend.log 2>&1 &
+
+      - name: Build frontend
+        working-directory: frontend
+        run: |
+          # No lockfile in the repo, so `npm ci` is not possible.
+          npm install --no-audit --no-fund
+          npm run build
+
+      - name: Start frontend
+        working-directory: frontend
+        run: nohup npm run start -- --port 3000 > ../logs/frontend.log 2>&1 &
+
+      - name: Wait for servers
+        run: |
+          curl --retry 30 --retry-delay 2 --retry-connrefused -sf http://localhost:8000/health
+          curl --retry 30 --retry-delay 2 --retry-connrefused -sf -o /dev/null http://localhost:3000
+
+      - name: Run E2E tests
+        run: |
+          pytest tests/e2e -v \
+            --browser chromium \
+            --screenshot only-on-failure \
+            --tracing retain-on-failure \
+            --output test-results
+
+      - name: Upload E2E artifacts
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: e2e-results
+          path: |
+            test-results/
+            logs/
+          include-hidden-files: true
+          if-no-files-found: ignore
