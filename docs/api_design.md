@@ -142,9 +142,11 @@ Request: `{ "question": "What replaced IPC-302?" }` (1 to 2000 characters).
 ```
 
 `model` names the LLM in use; it is `deterministic-legal` when no LLM API key is
-configured. Answers are grounded in the retrieved records; in v1.5.x a grounding
-check also verifies that every IPC/BNS code cited by the LLM appears in those
-records, and otherwise refuses or flags the answer for review.
+configured. Answers are grounded in the retrieved records, and a grounding
+check verifies that every IPC/BNS code cited by the LLM appears in those records
+(subsections matched exactly). Ungrounded codes are flagged for review, not
+refused: confidence is capped at low, and `/chat` and `/agent` responses carry
+`grounded` (bool) and `ungrounded_codes` (list).
 
 ### POST /chat/summary
 

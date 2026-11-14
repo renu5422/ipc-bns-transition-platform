@@ -25,7 +25,6 @@ The platform is organised as explicit, independently testable layers:
   - **17 omissions** marked explicitly (e.g. `IPC-377 → BNS-OMITTED-377`),
   - **Prevention of Corruption Act repeals** marked explicitly (`IPC-161`, `IPC-165A → BNS-REPEALED-161`).
 - Each record carries `keywords`, `chapter`, `ai_summary`, and `validation_rules` metadata.
-- `DataLoader` (`backend/services/data_loader.py`) loads the dataset into a Pandas DataFrame with code normalisation.
 - **SQLite mirror** (`backend/db`) on SQLAlchemy 2.0 (typed `Mapped`/`mapped_column` ORM): `seed.py` is idempotent (uses `Session.merge`, safe to re-run), and `DBMappingService` serves the same API from the database instead of JSON.
 
 ### 2. Deterministic Reasoning Layer
@@ -51,12 +50,13 @@ Detected contradictions are surfaced as structured review output rather than sil
 
 - **ChatbotEngine** (LangChain LCEL, `backend/services/chatbot_engine.py`): retrieval-grounded Q&A and section summaries with cited sources and a confidence label.
 - **LegalTransitionAgent** (LangGraph, `backend/services/agent_graph.py`): explicit state graph `extract → retrieve → validate → compose`, with a **refuse branch** when no mappings match. Only the final compose step uses an LLM; extraction, retrieval, and validation are deterministic.
+- **Grounding guard** (`backend/services/grounding.py`): every IPC/BNS code cited in a chatbot or agent answer must appear in the retrieved records. Subsections must match exactly (`BNS-106(2)` is not grounded by `BNS-106(1)`), while a bare `BNS-106` is grounded by any of its subsections. Mismatches are flagged for human review: confidence is capped at low, a warning is added to the answer, and the response sets `grounded: false` and lists the codes in `ungrounded_codes`.
 - **ML ranking** (`backend/ml`): scikit-learn TF-IDF + cosine similarity model behind `POST /rank`, with Matplotlib evaluation (`docs/ml_evaluation.png`).
 - **LLM resolution order:** Anthropic (`claude-haiku-4-5` default) → OpenAI (`gpt-4o-mini` default) → `DeterministicLegalLLM`, a fully offline fallback that composes grounded answers from retrieved context only. The platform is usable and testable with no API keys.
 
 ### 5. Audit / Trace Layer
 
-Every agent run returns a step-by-step `trace` (one entry per graph node: extract, retrieve, validate, compose/refuse) plus references, sources with scores, contradictions, and confidence — so every answer is reviewable.
+Every agent run returns a step-by-step `trace` (one entry per graph node: extract, retrieve, validate, compose/refuse, grounding_check) plus references, sources with scores, contradictions, and confidence — so every answer is reviewable.
 
 ### 6. API & Auth Layer
 
@@ -66,7 +66,7 @@ Public: `POST /login` · `POST /logout` · `GET /health` · `GET /search` · `GE
 
 Auth required 🔒 (`Authorization: Bearer <token>` from `POST /login`): `GET /me` · `POST /chat` · `POST /chat/summary` · `POST /agent` · `POST /rank` · `GET /admin/*`
 
-JWT bearer auth protects the chat, agent, ranking and admin endpoints. Set `AUTH_SECRET_KEY` in production (the dev default is forgeable); the frontend keeps the JWT in `localStorage`, which is demo-grade — prefer httpOnly cookies for production. Demo analyst account (configurable via `AUTH_USERNAME` / `AUTH_PASSWORD`):
+JWT bearer auth protects the chat, agent, ranking and admin endpoints. With `APP_ENV=production` (set by docker-compose) the backend refuses to start unless `AUTH_SECRET_KEY` is a non-default secret of at least 32 characters — generate one with `python -c "import secrets; print(secrets.token_urlsafe(48))"` and put it in `.env`. In development it falls back to an insecure dev secret and logs a warning. The frontend keeps the JWT in `localStorage`, which is demo-grade — prefer httpOnly cookies for production. Demo analyst account (configurable via `AUTH_USERNAME` / `AUTH_PASSWORD`):
 
 ```
 username: analyst
@@ -89,9 +89,9 @@ Next.js 14 + TypeScript + Tailwind CSS + lucide-react. Pages: landing, search, c
 
 ### 9. Quality & Ops Layer
 
-- **pytest suite:** 210 passing backend tests (`tests/`), plus a Playwright E2E spec (`tests/e2e/test_search_flow.py`).
+- **pytest suite:** 268 passing backend tests (`tests/`, 85% coverage), plus 25 Playwright E2E tests (`tests/e2e/`) that run in their own CI job.
 - **E2E smoke script:** `scripts/e2e_smoke.py` walks the full analyst journey (login → mapping lookup → verification → chat/agent → rank) against a running backend.
-- **CI:** GitHub Actions (`.github/workflows/ci.yml`) — flake8 lint + full test run with coverage artifact.
+- **CI:** GitHub Actions (`.github/workflows/ci.yml`) runs flake8 lint → pytest with coverage (≥70%) → an **E2E job** running Playwright tests against the built Next.js frontend and live FastAPI backend, uploading screenshots, traces and server logs on failure.
 - **Docker:** `backend/Dockerfile`, `frontend/Dockerfile`, `docker-compose.yml`.
 
 ## Workflow Pipeline
@@ -112,11 +112,13 @@ Next.js 14 + TypeScript + Tailwind CSS + lucide-react. Pages: landing, search, c
 - **ML:** Scikit-learn TF-IDF ranking model (NumPy/Pandas/Matplotlib evaluation)
 - **Frontend:** Next.js 14, TypeScript, Tailwind CSS, lucide-react
 - **Data/Rules:** JSON mapping assets + SQLite mirror (`backend/db`)
-- **Ops:** Docker + docker-compose, GitHub Actions CI, pytest (210 tests) + Playwright E2E
+- **Ops:** Docker + docker-compose, GitHub Actions CI, pytest (268 tests) + Playwright E2E (25 tests)
 
 ## Running with Docker
 
 ```
+cp .env.example .env
+# set AUTH_SECRET_KEY in .env: python -c "import secrets; print(secrets.token_urlsafe(48))"
 docker compose up --build
 # backend -> http://localhost:8000  |  frontend -> http://localhost:3000
 ```
@@ -164,7 +166,7 @@ ipc-bns-transition-platform/
 ## Documentation
 
 - [Architecture](docs/architecture.md)
-- [MVP Scope](docs/mvp_scope.md)
+- [Product Scope](docs/mvp_scope.md)
 - [API Design](docs/api_design.md)
 - [Security Plan](docs/security_plan.md)
 - [Data Model](docs/data_model.md)

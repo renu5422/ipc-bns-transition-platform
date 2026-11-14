@@ -79,9 +79,10 @@ START -> extract -> retrieve --(hits)--> validate -> compose -> END
 
 Every node appends a line to `trace`, which is returned to the caller.
 
-In v1.5.x the chatbot also runs a grounding check: every IPC/BNS code in an LLM
-answer must exist in the retrieved records, otherwise the answer is refused or
-flagged for review.
+Both the chatbot and the agent (as a final `grounding_check` node) run a
+grounding check (`services/grounding.py`): every IPC/BNS code in an LLM answer
+must exist in the retrieved records, with subsections matched exactly. Ungrounded
+codes are flagged for human review (confidence capped at low, `grounded: false`).
 
 ### ML ranking
 

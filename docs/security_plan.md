@@ -23,8 +23,17 @@ Configuration (environment variables):
 |---|---|
 | `AUTH_USERNAME` | Analyst username |
 | `AUTH_PASSWORD` | Analyst password (hashed with bcrypt at startup) |
-| `AUTH_SECRET_KEY` | JWT signing key. **Must be set to a strong random value in production**; the built-in default is for local development only |
+| `AUTH_SECRET_KEY` | JWT signing key. **Must be a strong random value in production**; the built-in default is for local development only |
 | `AUTH_TOKEN_TTL_MINUTES` | Token lifetime in minutes |
+| `APP_ENV` | `development` (default) or `production` |
+
+Fail-safe secret check (`resolve_secret()` in `backend/api/auth.py`, run at
+import so the app fails at startup, not on first request): with
+`APP_ENV=production` the backend refuses to start if `AUTH_SECRET_KEY` is unset,
+empty, the dev default, a `change-me` placeholder, or shorter than 32
+characters, and the error prints the command to generate a key. In development
+it falls back to the dev secret and logs a warning. `docker-compose.yml` sets
+`APP_ENV=production` and requires `AUTH_SECRET_KEY` from `.env`.
 
 ## Authorization
 
@@ -54,8 +63,12 @@ or diagnostics are protected at router level with `Depends(get_current_user)`.
   context is insufficient.
 - The agent refuses when retrieval finds nothing and flags answers for human
   review when contradictory mappings are detected.
-- v1.5.x adds a grounding check: any IPC/BNS code in an LLM answer that is not
-  in the retrieved records causes the answer to be refused or flagged.
+- Grounding check (`backend/services/grounding.py`), on both the chat and agent
+  paths: every IPC/BNS code in an LLM answer must appear in the retrieved
+  records, with subsections matched exactly (`BNS-106(2)` is not grounded by
+  `BNS-106(1)`). Ungrounded codes are flagged for human review: confidence is
+  capped at low, a warning is added, and the response sets `grounded: false`
+  with the codes in `ungrounded_codes`.
 - Without an LLM API key, the offline deterministic LLM is used, so no data
   leaves the host.
 
