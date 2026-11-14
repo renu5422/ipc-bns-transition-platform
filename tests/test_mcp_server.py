@@ -94,7 +94,7 @@ def test_ask_legal_agent_trace_has_four_steps() -> None:
         "model",
     }
     assert isinstance(result["trace"], list)
-    assert len(result["trace"]) == 4
+    assert len(result["trace"]) == 5
     assert "IPC-302" in result["references"]
 
 

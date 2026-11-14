@@ -43,6 +43,9 @@ class AgentResponse(BaseModel):
     confidence: str  # high | medium | low | none
     trace: list[str]
     model: str
+    # Grounding check (additive): cited codes absent from retrieved records.
+    grounded: bool = True
+    ungrounded_codes: list[str] = Field(default_factory=list)
 
 
 @router.post("", response_model=AgentResponse)

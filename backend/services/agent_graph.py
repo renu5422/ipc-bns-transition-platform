@@ -4,10 +4,13 @@ Implements the README workflow pipeline as an explicit state graph:
 
     extract_references -> retrieve_mappings -> validate -> compose_answer
                                    \\ (no hits) ------------^
+    compose_answer | refuse -> grounding_check
 
 Each node appends to an audit ``trace`` (README "Audit/Trace Layer"), so
-every answer is reviewable step by step. The LLM is only used in the final
-compose step; extraction, retrieval, and validation are deterministic.
+every answer is reviewable step by step. The LLM is only used in the
+compose step; extraction, retrieval, validation, and the final
+``grounding_check`` (every cited IPC/BNS code must appear in the retrieved
+records — see ``backend.services.grounding``) are deterministic.
 """
 
 from typing import Any, TypedDict
@@ -20,6 +23,12 @@ from backend.services.chatbot_engine import (
     extract_references,
     resolve_default_llm,
 )
+from backend.services.grounding import (
+    REFUSAL_MESSAGE,
+    cap_confidence,
+    check_grounding,
+    warning_for,
+)
 from backend.services.mapping_service import MappingService
 from backend.services.prompts import CHAT_PROMPT, format_context
 
@@ -31,6 +40,8 @@ class AgentState(TypedDict, total=False):
     contradictions: list[dict[str, Any]]
     confidence: str                # high | medium | low | none
     answer: str
+    grounded: bool
+    ungrounded_codes: list[str]    # cited codes absent from retrieved records
     trace: list[str]               # audit trail, one entry per step
 
 
@@ -110,15 +121,28 @@ class LegalTransitionAgent:
 
     def _refuse_node(self, state: AgentState) -> AgentState:
         return {
-            "answer": (
-                "I cannot find a validated IPC-BNS mapping for this query in "
-                "the current dataset. Please refine your query with a section "
-                "code (e.g. IPC-302) or offence keywords."
-            ),
+            "answer": REFUSAL_MESSAGE,
             "contradictions": [],
             "confidence": "none",
             "trace": state["trace"] + ["compose: no mappings — refused gracefully"],
         }
+
+    def _grounding_node(self, state: AgentState) -> AgentState:
+        records = [h["record"] for h in state.get("hits", [])]
+        result = check_grounding(state["answer"], records, state["question"])
+        ungrounded = result["ungrounded_codes"]
+        update: AgentState = {
+            "grounded": result["grounded"],
+            "ungrounded_codes": ungrounded,
+        }
+        if ungrounded:
+            update["confidence"] = cap_confidence(state["confidence"])
+            update["answer"] = state["answer"] + "\n\n" + warning_for(ungrounded)
+            note = f"ungrounded {ungrounded} — flagged for human review"
+        else:
+            note = f"all {len(result['cited_codes'])} cited code(s) grounded"
+        update["trace"] = state["trace"] + [f"grounding_check: {note}"]
+        return update
 
     # ── Graph wiring ──────────────────────────────────────────────────────
 
@@ -133,6 +157,7 @@ class LegalTransitionAgent:
         g.add_node("validate", self._validate_node)
         g.add_node("compose", self._compose_node)
         g.add_node("refuse", self._refuse_node)
+        g.add_node("grounding_check", self._grounding_node)
 
         g.add_edge(START, "extract")
         g.add_edge("extract", "retrieve")
@@ -141,8 +166,9 @@ class LegalTransitionAgent:
             {"validate": "validate", "refuse": "refuse"},
         )
         g.add_edge("validate", "compose")
-        g.add_edge("compose", END)
-        g.add_edge("refuse", END)
+        g.add_edge("compose", "grounding_check")
+        g.add_edge("refuse", "grounding_check")
+        g.add_edge("grounding_check", END)
         return g.compile()
 
     # ── Public API ────────────────────────────────────────────────────────
@@ -169,4 +195,6 @@ class LegalTransitionAgent:
             "confidence": final["confidence"],
             "trace": final["trace"],
             "model": self.model_name,
+            "grounded": final.get("grounded", True),
+            "ungrounded_codes": final.get("ungrounded_codes", []),
         }

@@ -135,6 +135,9 @@ export interface ChatResponse {
   sources: ChatSource[];
   confidence: Confidence;
   model: string;
+  /** False when the answer cites IPC/BNS codes not in the retrieved sources. */
+  grounded?: boolean;
+  ungrounded_codes?: string[];
 }
 
 export interface AgentResponse {
@@ -145,6 +148,9 @@ export interface AgentResponse {
   confidence: Confidence;
   trace: string[];
   model: string;
+  /** False when the answer cites IPC/BNS codes not in the retrieved sources. */
+  grounded?: boolean;
+  ungrounded_codes?: string[];
 }
 
 export interface SummaryResponse {

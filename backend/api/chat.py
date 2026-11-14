@@ -43,6 +43,9 @@ class ChatResponse(BaseModel):
     sources: list[SourceModel]
     confidence: str  # high | medium | low | none
     model: str
+    # Grounding check (additive): cited codes absent from retrieved records.
+    grounded: bool = True
+    ungrounded_codes: list[str] = Field(default_factory=list)
 
 
 class SummaryRequest(BaseModel):
