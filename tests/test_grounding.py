@@ -1,5 +1,6 @@
 """Tests for the post-generation grounding check (item 13)."""
 
+import json
 import os
 from typing import Any
 
@@ -16,7 +17,9 @@ from backend.services.grounding import (
     check_grounding,
     extract_references,
     grounded_codes,
+    is_grounded,
 )
+from backend.services.mapping_service import MappingService
 
 RECORD = {"id": "r1", "ipc_code": "IPC-302", "bns_code": "BNS-101"}
 SUBSECTION_RECORD = {"id": "r2", "ipc_code": "IPC-304A", "bns_code": "BNS-106(1)"}
@@ -65,9 +68,62 @@ class TestCheckGrounding:
             "IPC-302", "BNS-101",
         ]
 
-    @pytest.mark.parametrize("cited", ["BNS-106", "BNS-106(1)", "BNS-106(2)", "bns 106"])
-    def test_subsections_normalise_to_section(self, cited):
+    @pytest.mark.parametrize("cited", ["BNS-106(1)", "bns 106 (1)", "BNS_106( 1 )"])
+    def test_exact_subsection_is_grounded(self, cited):
         assert check_grounding(f"see {cited}", [SUBSECTION_RECORD])["grounded"] is True
+
+    def test_wrong_subsection_is_flagged(self):
+        result = check_grounding("see BNS-106(2)", [SUBSECTION_RECORD])
+        assert result["grounded"] is False
+        assert result["ungrounded_codes"] == ["BNS-106(2)"]
+
+    @pytest.mark.parametrize("cited", ["BNS-106", "bns 106"])
+    def test_bare_parent_of_retrieved_subsection_is_grounded(self, cited):
+        assert check_grounding(f"see {cited}", [SUBSECTION_RECORD])["grounded"] is True
+
+    def test_subsection_of_bare_record_is_ungrounded(self):
+        """Chosen rule: a bare record does not vouch for a specific subsection."""
+        result = check_grounding("BNS-101(1) applies", [RECORD])
+        assert result["ungrounded_codes"] == ["BNS-101(1)"]
+
+    def test_mixed_answer_lists_only_wrong_subsection(self):
+        result = check_grounding(
+            "BNS-106(1) covers rash acts; BNS-106(2) covers hit-and-run.",
+            [SUBSECTION_RECORD],
+        )
+        assert result["cited_codes"] == ["BNS-106(1)", "BNS-106(2)"]
+        assert result["ungrounded_codes"] == ["BNS-106(2)"]
+
+    def test_nested_subsections_match_exactly(self):
+        rec = {"ipc_code": "IPC-379", "bns_code": "BNS-137(1)(a)"}
+        assert check_grounding("BNS-137(1)(a)", [rec])["grounded"]
+        assert check_grounding("BNS-137", [rec])["grounded"]
+        assert check_grounding("BNS-137(1)(b)", [rec])["ungrounded_codes"] == ["BNS-137(1)(b)"]
+        assert check_grounding("BNS-137(1)", [rec])["ungrounded_codes"] == ["BNS-137(1)"]
+
+    def test_subsection_letter_case_is_normalised(self):
+        rec = {"ipc_code": "IPC-420", "bns_code": "BNS-326(a)"}
+        assert check_grounding("BNS-326(A)", [rec])["grounded"]
+
+    def test_subsection_from_question_is_allowed_exactly(self):
+        question = "what is BNS-106(2)?"
+        assert check_grounding("BNS-106(2) is not in the dataset.", [], question)["grounded"]
+        assert not check_grounding("BNS-106(3) instead", [], question)["grounded"]
+
+
+class TestExtractReferencesSubsections:
+    @pytest.mark.parametrize("text,default,keep", [
+        ("BNS-106(1)", ["BNS-106"], ["BNS-106(1)"]),
+        ("bns 106 (2)", ["BNS-106"], ["BNS-106(2)"]),
+        ("BNS-137(1)(a)", ["BNS-137"], ["BNS-137(1)(a)"]),
+        ("BNS-326(A)", ["BNS-326"], ["BNS-326(a)"]),
+        ("IPC-302 (Murder) and IPC-376 (Rape)", ["IPC-302", "IPC-376"], ["IPC-302", "IPC-376"]),
+        ("IPC-304A", ["IPC-304A"], ["IPC-304A"]),
+        ("Section 106(1)", [], []),
+    ])
+    def test_default_drops_and_keep_preserves_subsections(self, text, default, keep):
+        assert extract_references(text) == default
+        assert extract_references(text, keep_subsections=True) == keep
 
     def test_letter_suffix_is_significant(self):
         result = check_grounding("IPC-304 applies", [SUBSECTION_RECORD])
@@ -159,6 +215,53 @@ class TestAgentGrounding:
         AgentResponse(**result)  # API contract still validates
 
 
+SUB_RECORD_FULL = {
+    "id": "sub-1",
+    "ipc_code": "IPC-304A",
+    "ipc_title": "Death by negligence",
+    "bns_code": "BNS-106(1)",
+    "bns_title": "Death by negligence",
+    "description": "Causing death by negligence.",
+    "chapter": "Offences Against Human Body",
+    "keywords": ["negligence"],
+    "ai_summary": "Negligent death.",
+}
+WRONG_SUB = "IPC-304A maps to BNS-106(1); hit-and-run falls under BNS-106(2)."
+
+
+@pytest.fixture
+def sub_service(tmp_path):
+    f = tmp_path / "sub.json"
+    f.write_text(json.dumps([SUB_RECORD_FULL]), encoding="utf-8")
+    return MappingService(f)
+
+
+class TestWrongSubsectionBothPaths:
+    def test_chat_path_flags_wrong_subsection(self, sub_service):
+        engine = ChatbotEngine(llm=FixedLLM(answer=WRONG_SUB), mapping_service=sub_service)
+        result = engine.ask("what replaced IPC-304A?")
+        assert result["grounded"] is False
+        assert result["ungrounded_codes"] == ["BNS-106(2)"]
+        assert result["confidence"] == "low"
+        assert "BNS-106(2)" in result["answer"].split("WARNING")[1]
+
+    def test_agent_path_flags_wrong_subsection(self, sub_service):
+        agent = LegalTransitionAgent(llm=FixedLLM(answer=WRONG_SUB), mapping_service=sub_service)
+        result = agent.run("what replaced IPC-304A?")
+        assert result["grounded"] is False
+        assert result["ungrounded_codes"] == ["BNS-106(2)"]
+        assert result["confidence"] == "low"
+        assert "BNS-106(2)" in result["trace"][-1]
+
+    def test_deterministic_subsection_answer_is_grounded(self, sub_service):
+        llm = DeterministicLegalLLM()
+        for runner in (ChatbotEngine(llm=llm, mapping_service=sub_service).ask,
+                       LegalTransitionAgent(llm=llm, mapping_service=sub_service).run):
+            result = runner("IPC-304A")
+            assert "BNS-106(1)" in result["answer"]
+            assert result["grounded"] is True
+
+
 # ── Live LLM (opt-in) ──────────────────────────────────────────────────────
 
 @pytest.mark.skipif(
@@ -176,8 +279,11 @@ def test_live_anthropic_no_unflagged_ungrounded_codes(mapping_service, question)
     result = ChatbotEngine(llm=llm, mapping_service=mapping_service).ask(question)
 
     answer = result["answer"].split("\n\nWARNING:")[0]
-    allowed = grounded_codes(result["sources"]) | set(extract_references(question))
-    unsupported = [c for c in extract_references(answer) if c not in allowed]
+    allowed = grounded_codes(result["sources"]) | set(
+        extract_references(question, keep_subsections=True)
+    )
+    cited = extract_references(answer, keep_subsections=True)
+    unsupported = [c for c in cited if not is_grounded(c, allowed)]
     if unsupported:
         assert result["grounded"] is False
         assert set(unsupported) <= set(result["ungrounded_codes"])

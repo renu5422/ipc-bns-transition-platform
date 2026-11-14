@@ -5,27 +5,44 @@ mapping records that were retrieved for that question. Codes that do not
 are reported as *ungrounded* so the caller can flag the answer for human
 review instead of silently passing a possibly hallucinated mapping.
 
-Normalisation rule (section-level granularity):
-- Codes are normalised with ``extract_references`` on both sides, giving
-  ``PREFIX-NUMBER[LETTER]`` (``ipc 302`` / ``IPC_302`` -> ``IPC-302``).
-- Parenthesised subsections are dropped: a record code ``BNS-106(1)`` grounds
-  answer citations ``BNS-106`` and ``BNS-106(2)`` alike. Subsection-level
-  hallucinations are therefore out of scope for this check.
-- Letter suffixes are significant: ``IPC-304A`` is a different section from
-  ``IPC-304`` and does not ground it (nor vice versa).
+Normalisation (formatting only): ``extract_references(text,
+keep_subsections=True)`` yields ``PREFIX-NUMBER[LETTER][(sub)...]`` —
+prefix and section letter upper-cased, subsection parts lower-cased, inner
+whitespace removed (``bns 106 (1)`` / ``BNS_106(1)`` -> ``BNS-106(1)``,
+``BNS-326(A)`` -> ``BNS-326(a)``). Text without an IPC/BNS prefix (e.g.
+"Section 106(1)") is not a citation and is ignored.
 
-Allowed codes = both ``ipc_code`` and ``bns_code`` of every retrieved record,
-plus codes the analyst wrote in the question (echoing the question back,
-e.g. "IPC-999 has no validated mapping", is not a fabricated mapping). The
-canonical refusal message is excluded before extraction because its
+Matching rules (allowed = ``ipc_code`` and ``bns_code`` of every retrieved
+record, plus codes the analyst wrote in the question):
+
+- Cited code WITH a subsection (``BNS-106(2)``): grounded only if exactly
+  that code, subsection included, is allowed. A record ``BNS-106(1)`` does
+  NOT ground ``BNS-106(2)``.
+- Cited bare section (``BNS-106``): grounded if the bare section or any of
+  its subsections is allowed — a parent-level citation is not a false claim.
+- Retrieved bare section (``BNS-106``) vs cited subsection (``BNS-106(1)``):
+  UNGROUNDED. The record does not show that subsection exists or is the
+  relevant one, so the extra specificity is unverified.
+- Nested subsections are matched exactly (``BNS-137(1)(a)`` grounds
+  ``BNS-137(1)(a)`` and bare ``BNS-137``, but not ``BNS-137(1)``).
+- Letter suffixes are strict: ``IPC-304A`` and ``IPC-304`` are different
+  sections.
+
+The canonical refusal message is excluded before extraction because its
 "e.g. IPC-302" example is instructional, not a citation.
 """
 
 import re
 from typing import Any, Iterable
 
-# Matches IPC-302, IPC 302, ipc302, BNS-101, bns_101 ...
-_CODE_RE = re.compile(r"\b(IPC|BNS)[\s\-_]?(\d{1,4}[A-Za-z]?)\b", re.IGNORECASE)
+# Matches IPC-302, IPC 302, ipc302, BNS-101, bns_101, BNS-106(1), BNS-137(1)(a) ...
+# A subsection is a number, a single letter, or a roman numeral (ii, iv ...) so
+# that parenthesised titles such as "IPC-376 (Rape)" are not mistaken for one.
+_SUB = r"\(\s?(?:\d{1,3}[A-Za-z]?|[A-Za-z]|[ivxIVX]{2,5})\s?\)"
+_CODE_RE = re.compile(
+    rf"\b(IPC|BNS)[\s\-_]?(\d{{1,4}}[A-Za-z]?)\b((?:\s?{_SUB})*)",
+    re.IGNORECASE,
+)
 
 REFUSAL_MESSAGE = (
     "I cannot find a validated IPC-BNS mapping for this query in "
@@ -39,23 +56,45 @@ UNGROUNDED_WARNING = (
 )
 
 
-def extract_references(text: str) -> list[str]:
-    """Detect and normalise IPC/BNS section references in free text."""
+def extract_references(text: str, keep_subsections: bool = False) -> list[str]:
+    """Detect and normalise IPC/BNS section references in free text.
+
+    By default subsections are dropped (``BNS-106(1)`` -> ``BNS-106``), which
+    is what retrieval wants. ``keep_subsections=True`` keeps them, normalised
+    as described in the module docstring, for the grounding comparison.
+    """
     seen: list[str] = []
-    for prefix, num in _CODE_RE.findall(text or ""):
+    for prefix, num, subs in _CODE_RE.findall(text or ""):
         code = f"{prefix.upper()}-{num.upper()}"
+        if keep_subsections:
+            code += re.sub(r"\s", "", subs).lower()
         if code not in seen:
             seen.append(code)
     return seen
 
 
+def _base(code: str) -> str:
+    return code.split("(", 1)[0]
+
+
 def grounded_codes(records: Iterable[dict[str, Any]]) -> set[str]:
-    """Normalised IPC and BNS codes of the retrieved records."""
+    """Normalised IPC and BNS codes (subsections kept) of the retrieved records."""
     allowed: set[str] = set()
     for record in records:
-        allowed.update(extract_references(str(record.get("ipc_code") or "")))
-        allowed.update(extract_references(str(record.get("bns_code") or "")))
+        for field in ("ipc_code", "bns_code"):
+            allowed.update(
+                extract_references(str(record.get(field) or ""), keep_subsections=True)
+            )
     return allowed
+
+
+def is_grounded(code: str, allowed: set[str]) -> bool:
+    """Apply the matching rules from the module docstring to one cited code."""
+    if code in allowed:
+        return True
+    if "(" in code:
+        return False  # subsection citations need an exact match
+    return any(_base(a) == code for a in allowed)
 
 
 def check_grounding(
@@ -65,9 +104,11 @@ def check_grounding(
 ) -> dict[str, Any]:
     """Return ``{"grounded", "cited_codes", "ungrounded_codes"}`` for an answer."""
     text = (answer or "").replace(REFUSAL_MESSAGE, "")
-    cited = extract_references(text)
-    allowed = grounded_codes(records) | set(extract_references(question))
-    ungrounded = [code for code in cited if code not in allowed]
+    cited = extract_references(text, keep_subsections=True)
+    allowed = grounded_codes(records) | set(
+        extract_references(question, keep_subsections=True)
+    )
+    ungrounded = [code for code in cited if not is_grounded(code, allowed)]
     return {
         "grounded": not ungrounded,
         "cited_codes": cited,
