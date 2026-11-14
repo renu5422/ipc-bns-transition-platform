@@ -10,6 +10,12 @@ services:
     environment:
       - LOG_LEVEL=INFO
       - CORS_ORIGINS=http://localhost:3000
+      # Auth — values come from .env (copy .env.example). Fails fast if the
+      # JWT signing key is missing so we never run with the dev default.
+      - AUTH_SECRET_KEY=${AUTH_SECRET_KEY:?set AUTH_SECRET_KEY in .env (see .env.example)}
+      - AUTH_USERNAME=${AUTH_USERNAME:-analyst}
+      - AUTH_PASSWORD=${AUTH_PASSWORD:-nyayasetu2026}
+      - AUTH_TOKEN_TTL_MINUTES=${AUTH_TOKEN_TTL_MINUTES:-60}
       # - OPENAI_API_KEY=...      # optional real LLM
       # - ANTHROPIC_API_KEY=...   # optional real LLM
     restart: unless-stopped
