@@ -60,7 +60,7 @@ Every agent run returns a step-by-step `trace` (one entry per graph node: extrac
 
 ### 6. API & Auth Layer
 
-FastAPI application (`backend/main.py`, version **1.4.0**) with request logging middleware and a global exception handler.
+FastAPI application (`backend/main.py`, version **1.5.0**) with request logging middleware and a global exception handler.
 
 Public: `POST /login` · `POST /logout` · `GET /health` · `GET /search` · `GET /mapping` · `GET /mapping/contradiction` · `GET /mapping/impact`
 
@@ -85,11 +85,11 @@ See `backend/mcp_server/README.md` for registration instructions.
 
 ### 8. Frontend Layer
 
-Next.js 14 + TypeScript + Tailwind CSS + lucide-react. Pages: landing, search, chat (with a **Chat / Agent (audit trace)** mode toggle), section detail, dashboard, admin, login.
+Next.js 14 + TypeScript + Tailwind CSS + lucide-react. Pages: landing, search, chat (with a **Chat / Agent (audit trace)** mode toggle), section detail, dashboard, admin, login. The navbar shows **Sign in / Sign out**; the axios client attaches the stored JWT to every request, and the chat, agent and admin views show a sign-in prompt on a 401.
 
 ### 9. Quality & Ops Layer
 
-- **pytest suite:** 207 passing backend tests (`tests/`), plus a Playwright E2E spec (`tests/e2e/test_search_flow.py`).
+- **pytest suite:** 210 passing backend tests (`tests/`), plus a Playwright E2E spec (`tests/e2e/test_search_flow.py`).
 - **E2E smoke script:** `scripts/e2e_smoke.py` walks the full analyst journey (login → mapping lookup → verification → chat/agent → rank) against a running backend.
 - **CI:** GitHub Actions (`.github/workflows/ci.yml`) — flake8 lint + full test run with coverage artifact.
 - **Docker:** `backend/Dockerfile`, `frontend/Dockerfile`, `docker-compose.yml`.
@@ -112,7 +112,7 @@ Next.js 14 + TypeScript + Tailwind CSS + lucide-react. Pages: landing, search, c
 - **ML:** Scikit-learn TF-IDF ranking model (NumPy/Pandas/Matplotlib evaluation)
 - **Frontend:** Next.js 14, TypeScript, Tailwind CSS, lucide-react
 - **Data/Rules:** JSON mapping assets + SQLite mirror (`backend/db`)
-- **Ops:** Docker + docker-compose, GitHub Actions CI, pytest (207 tests) + Playwright E2E
+- **Ops:** Docker + docker-compose, GitHub Actions CI, pytest (210 tests) + Playwright E2E
 
 ## Running with Docker
 
@@ -128,9 +128,9 @@ Optional: set `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` in `docker-compose.yml` to
 ### Backend
 
 ```bash
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
+# from the repo root (main.py imports the `backend` package)
+pip install -r backend/requirements.txt
+uvicorn backend.main:app --reload
 ```
 
 ### Frontend
